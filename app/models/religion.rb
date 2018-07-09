@@ -1,3 +1,3 @@
 class Religion < ApplicationRecord
-  belongs_to :funeral
+  has_many :funerals
 end
