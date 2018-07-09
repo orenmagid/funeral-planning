@@ -2,7 +2,9 @@
 <%= form_for @funeral  do |f| %>
   <div>
     <%= f.label :disposition %>
-    <%= f.text_field :disposition %>
+    <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other'])) %>
+  </div>
+  <div>
   </div>
   <div>
     <%= f.label :clergy %>
@@ -18,15 +20,15 @@
   </div>
   <div>
     <%= f.label :service_type %>
-    <%= f.text_field :service_type %>
+    <%= f.select(:service_type, options_for_select(['Traditional Funeral', 'Viewing Only', 'Witness Cremation', 'Graveside Only', 'Memorial Service', 'No Service'])) %>
   </div>
   <div>
-    <%= f.label :religion_id %>
-    <%= f.text_field :religion_id %>
+    <%= f.label :religion %>
+    <%= f.collection_select(:religion_id, Religion.all, :id, :name, prompt: true) %>
   </div>
   <div>
-    <%= f.label :funeral_home_id %>
-    <%= f.text_field :funeral_home_id %>
+    <%= f.label :funeral_home %>
+    <%= f.collection_select(:funeral_home_id, FuneralHome.all, :id, :name, prompt: true) %>
   </div>
 
     <%= f.submit "Create User" %>
