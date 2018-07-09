@@ -1,0 +1,33 @@
+
+<%= form_for @funeral  do |f| %>
+  <div>
+    <%= f.label :disposition %>
+    <%= f.text_field :disposition %>
+  </div>
+  <div>
+    <%= f.label :clergy %>
+    <%= f.text_field :clergy %>
+  </div>
+  <div>
+    <%= f.label :eulogist_1 %>
+    <%= f.text_field :eulogist_1 %>
+  </div>
+  <div>
+    <%= f.label :eulogist_2 %>
+    <%= f.text_field :eulogist_2 %>
+  </div>
+  <div>
+    <%= f.label :service_type %>
+    <%= f.text_field :service_type %>
+  </div>
+  <div>
+    <%= f.label :religion_id %>
+    <%= f.text_field :religion_id %>
+  </div>
+  <div>
+    <%= f.label :funeral_home_id %>
+    <%= f.text_field :funeral_home_id %>
+  </div>
+
+    <%= f.submit "Create User" %>
+<% end %>

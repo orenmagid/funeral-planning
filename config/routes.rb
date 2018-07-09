@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :funeral_homes
   resources :religions
   resources :users
+  resources :funerals
 
 
 
