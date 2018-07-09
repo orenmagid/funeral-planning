@@ -25,13 +25,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
   end
 
   create_table "dispositions", force: :cascade do |t|
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "expenses", force: :cascade do |t|
-    t.string "type"
+    t.string "disposition_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,28 +42,13 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
     t.string "clergy"
     t.string "eulogist_1"
     t.string "eulogist_2"
-    t.bigint "religion_id"
-    t.bigint "expense_id"
+    t.string "religion"
+    t.string "expense"
+    t.string "service_type"
     t.bigint "funeral_home_id"
-    t.bigint "service_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["expense_id"], name: "index_funerals_on_expense_id"
     t.index ["funeral_home_id"], name: "index_funerals_on_funeral_home_id"
-    t.index ["religion_id"], name: "index_funerals_on_religion_id"
-    t.index ["service_type_id"], name: "index_funerals_on_service_type_id"
-  end
-
-  create_table "religions", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "service_types", force: :cascade do |t|
-    t.string "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "user_funerals", force: :cascade do |t|
@@ -92,10 +71,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
   end
 
   add_foreign_key "agents", "users"
-  add_foreign_key "funerals", "expenses"
   add_foreign_key "funerals", "funeral_homes"
-  add_foreign_key "funerals", "religions"
-  add_foreign_key "funerals", "service_types"
   add_foreign_key "user_funerals", "funerals"
   add_foreign_key "user_funerals", "users"
   add_foreign_key "users", "dispositions"

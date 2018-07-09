@@ -1,4 +1,0 @@
-class ServiceTypesController < ApplicationController
-
-
-end

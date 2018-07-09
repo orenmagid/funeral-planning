@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   resources :users
 
 
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
+
+
 end
