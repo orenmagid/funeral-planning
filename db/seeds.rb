@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 # === DISPOSITION SEEDS ===
 
 disposition_array = ["Burial", "Green Burial", "Burial at Sea", "Cremation", "Donate Body to Science", "Other"]
@@ -41,3 +33,6 @@ religion_array.each do |name|
 end
 
 #=== FUNERAL HOME SEEDS ===
+
+FuneralHome.create(name: "Devol Funeral Home", phone:"(202) 333-6680", address: "2222 Wisconsin Ave NW, Washington, DC 20007")
+FuneralHome.create(name: "Marshall-March Funeral Home DC", phone:"(202) 723-1250", address: "4217 9th St NW, Washington, DC 20011")
