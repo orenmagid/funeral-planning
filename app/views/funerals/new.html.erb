@@ -5,6 +5,8 @@
     <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other'])) %>
   </div>
   <div>
+    <%= f.label :disposition %>
+    <%= f.text_field :disposition %>
   </div>
   <div>
     <%= f.label :clergy %>
@@ -20,7 +22,7 @@
   </div>
   <div>
     <%= f.label :service_type %>
-    <%= f.select(:service_type, options_for_select(['Traditional Funeral', 'Viewing Only', 'Witness Cremation', 'Graveside Only', 'Memorial Service', 'No Service'])) %>
+    <%= f.select(:service_type, options_for_select(['Traditional Funeral', 'Viewing Only', 'Witness Cremation', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'])) %>
   </div>
   <div>
     <%= f.label :religion %>
