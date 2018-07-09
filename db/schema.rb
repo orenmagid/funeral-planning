@@ -24,31 +24,33 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
     t.index ["user_id"], name: "index_agents_on_user_id"
   end
 
-  create_table "dispositions", force: :cascade do |t|
-    t.string "disposition_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "funeral_homes", force: :cascade do |t|
     t.string "name"
     t.integer "phone"
-    t.string "location"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "funerals", force: :cascade do |t|
+    t.string "disposition"
     t.string "clergy"
     t.string "eulogist_1"
     t.string "eulogist_2"
-    t.string "religion"
     t.string "expense"
     t.string "service_type"
+    t.bigint "religion_id"
     t.bigint "funeral_home_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["funeral_home_id"], name: "index_funerals_on_funeral_home_id"
+    t.index ["religion_id"], name: "index_funerals_on_religion_id"
+  end
+
+  create_table "religions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_funerals", force: :cascade do |t|
@@ -64,15 +66,13 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.bigint "disposition_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["disposition_id"], name: "index_users_on_disposition_id"
   end
 
   add_foreign_key "agents", "users"
   add_foreign_key "funerals", "funeral_homes"
+  add_foreign_key "funerals", "religions"
   add_foreign_key "user_funerals", "funerals"
   add_foreign_key "user_funerals", "users"
-  add_foreign_key "users", "dispositions"
 end

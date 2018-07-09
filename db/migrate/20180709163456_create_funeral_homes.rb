@@ -3,7 +3,7 @@ class CreateFuneralHomes < ActiveRecord::Migration[5.2]
     create_table :funeral_homes do |t|
       t.string :name
       t.integer :phone
-      t.string :location
+      t.string :address
 
       t.timestamps
     end
