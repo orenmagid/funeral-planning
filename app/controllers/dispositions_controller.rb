@@ -1,0 +1,4 @@
+class DispositionsController < ApplicationController
+
+
+end

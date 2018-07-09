@@ -1,0 +1,4 @@
+class FuneralsController < ApplicationController
+
+
+end
