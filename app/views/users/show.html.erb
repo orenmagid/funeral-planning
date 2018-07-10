@@ -4,6 +4,12 @@
   <h2>Menu</h2>
   <div class="identity">Logged in as: <%= @user.username %></div>
   <ul>
+    <% if !@user.agents.empty? %>
+      <li><%= link_to("See Agent Preferences", agents_path) %></li>
+      <li><%= link_to("Update Agent Preferences", edit_agent_path) %></li>
+    <% else %>
+      <li><%= link_to("Specify Agent Preferences", new_agent_path) %></li>
+    <% end %>
     <% if @user.funerals[0] %>
       <li><%= link_to("See Funeral Preferences", funeral_path) %></li>
       <li><%= link_to("Update Funeral Preferences", edit_funeral_path) %></li>
