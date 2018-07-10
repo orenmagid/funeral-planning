@@ -10,17 +10,22 @@
 
   <% elsif !@user.agents.empty? && @user.funerals.empty?%>
 
-  Link to Agent Index/Show and Link to pick up where you left off, which is with funeral preferences
+    <%= link_to "Specify Your Funeral Preferences", new_funeral_path(@user) %><br><br>
+    <%= link_to "Summary of Your Preferences", agents_path(@user) %>
 
   <% elsif @user.agents.empty? && !@user.funerals.empty?%>
 
-    Link to Funeral Index/Show and Link to pick up where you left off, which is with agents
+    <%= link_to "Specify Your Contacts", new_agent_path(@user) %><br><br>
+    <%= link_to "Summary of Your Preferences", funeral_path(@user) %>
 
   <% elsif !@user.agents.empty? && !@user.funerals.empty?%>
 
-  <!-- Overall Show Link -->
     <%= link_to "Summary of Your Preferences", users_summary_path %>
   <% end %>
+
+  <br><br>
+
+<%= link_to("See Funeral Preference Statistics", funerals_path) %>
 
 
 

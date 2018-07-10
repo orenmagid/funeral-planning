@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :summary]
 
 
-  def user_summary
+  def summary
+
+    @funeral = @user.funerals[0]
+
     render :summary
 
   end
