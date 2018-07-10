@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
 
   create_table "funerals", force: :cascade do |t|
     t.string "disposition"
+    t.string "disposition_other"
     t.string "officiant"
     t.string "eulogist_1"
     t.string "eulogist_2"

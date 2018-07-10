@@ -2,13 +2,14 @@ class UsersController < ApplicationController
   before_action :confirm_logged_in
   before_action :find_user, only: [:show, :edit, :update]
 
+
   def new
     @user = User.new
 
   end
 
   def show
-    @user = User.find(params[:id])
+
 
   end
 
@@ -26,7 +27,7 @@ class UsersController < ApplicationController
     end
 
   def edit
-    @user = User.find(params[:id])
+
 
   end
 
@@ -52,6 +53,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 
     end
+
+
 
 
 end

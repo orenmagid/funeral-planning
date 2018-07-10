@@ -2,9 +2,15 @@
 
 <h2>Your Funeral Preferences:</h2>
 
-<div>
-  Disposition: <%= @funeral.disposition %>
-</div>
+<% if @funeral.disposition == "Other" %>
+  <div>
+    Disposition: <%= @funeral.disposition_other %>
+  </div>
+<% else  %>
+  <div>
+    Disposition: <%= @funeral.disposition %>
+  </div>
+<% end %>
 <div>
   Officiant: <%= @funeral.officiant %>
 </div>

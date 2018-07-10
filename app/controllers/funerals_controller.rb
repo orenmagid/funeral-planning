@@ -51,8 +51,9 @@ class FuneralsController < ApplicationController
   private
 
   def funeral_params
+
     params.require(:funeral).permit(
-        :disposition, :officiant, :eulogist_1, :eulogist_2, :service_type, :religion_id, :funeral_home_id, funeral_home_attributes: [:name, :phone, :address])
+        :disposition, :disposition_other, :officiant, :eulogist_1, :eulogist_2, :service_type, :religion_id, :funeral_home_id, funeral_home_attributes: [:name, :phone, :address])
   end
 
   def find_funeral
