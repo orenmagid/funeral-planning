@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
 
   create_table "funeral_homes", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
+    t.string "phone"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
 
   create_table "funerals", force: :cascade do |t|
     t.string "disposition"
-    t.string "clergy"
+    t.string "officiant"
     t.string "eulogist_1"
     t.string "eulogist_2"
     t.string "expense"

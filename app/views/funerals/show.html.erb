@@ -1,7 +1,26 @@
-<%= @funeral.disposition %>
-<%= @funeral.clergy %>
-<%= @funeral.eulogist_1 %>
-<%= @funeral.eulogist_2 %>
-<%= @funeral.service_type %>
-<%= @funeral.religion.name %>
-<%= @funeral.funeral_home.name %>
+<h2>Your Funeral Preferences:</h2>
+
+<div>
+  Disposition: <%= @funeral.disposition %>
+</div>
+<div>
+  Officiant: <%= @funeral.officiant %>
+</div>
+<div>
+  Eulogist: <%= @funeral.eulogist_1 %>
+</div>
+<div>
+  Eulogist <%= @funeral.eulogist_2 %>
+</div>
+<div>
+  Service Type: <%= @funeral.service_type %>
+</div>
+<div>
+  Religion: <%= @funeral.religion.name %>
+</div>
+<div>
+  Funeral Home Name: <%= @funeral.funeral_home.name %> <br>
+  Funeral Home Phone: <%= @funeral.funeral_home.phone %><br>
+  Funeral Home Address: <%= @funeral.funeral_home.address %>
+
+</div>

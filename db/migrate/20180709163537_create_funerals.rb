@@ -2,7 +2,7 @@ class CreateFunerals < ActiveRecord::Migration[5.2]
   def change
     create_table :funerals do |t|
       t.string :disposition
-      t.string :clergy
+      t.string :officiant
       t.string :eulogist_1
       t.string :eulogist_2
       t.string :expense
