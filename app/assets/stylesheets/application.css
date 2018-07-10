@@ -64,7 +64,7 @@
    height: 4em;
    padding-top: 1em;
    text-align: center;
-   background: $red;
+   background: #b3c2db;
    color: $white;
 
    h1 { margin: 0; padding: 0; }
@@ -90,7 +90,7 @@
    clear: both;
    height: 2.5em;
    text-align: center;
-   background: $light_brown image-url('footer_gradient.png') repeat-y 0 0;
+   background: #b3c2db;
    color: $yellow;
 
    p {
