@@ -22,15 +22,12 @@ class AgentsController < ApplicationController
   end
 
   def show
-    # @agent = Agent.find(params[:id])
   end
 
   def edit
-    # @agent = Agent.find(params[:id])
   end
 
   def update
-    # @agent = Agent.find(params[:id])
     if @agent.update(agent_params)
       redirect_to @agent
     else
@@ -46,7 +43,7 @@ class AgentsController < ApplicationController
   private
 
   def agent_params
-    params.require(:agent).permit(:name, :email, :user_id)
+    params.require(:agent).permit(:name, :email)
   end
 
   def find_agent
