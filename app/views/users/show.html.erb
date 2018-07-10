@@ -9,8 +9,8 @@
     <% else %>
       <li><%= link_to("Specify Agent Preferences", new_agent_path) %></li>
     <% end %>
-    <% if @user.funerals[0] %>
-      <li><%= link_to("See Funeral Preferences", funeral_path) %></li>
+    <% if !@user.funerals.empty? %>
+      <li><%= link_to("See Funeral Preferences", funeral_path(@user)) %></li>
     <% else %>
       <li><%= link_to("Specify Funeral Preferences", new_funeral_path) %></li>
     <% end %>
