@@ -20,10 +20,14 @@
           <%= flash[:notice] %>
         </div>
       <% end %>
-    <%= yield %>
-    <div>
-    <%= link_to("Logout", access_logout_path) %>
 
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p><%= link_to("Logout", access_logout_path) %></p>
     </div>
   </body>
-</html>
+  </html>
