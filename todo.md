@@ -17,4 +17,4 @@ Overall List:
 
 Wednesday Morning:
 * Add and edit language throughout
-* Add CSS to improve user experience
+* Add CSS to improve user e-xperience
