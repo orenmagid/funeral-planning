@@ -1,0 +1,50 @@
+<h2>User Summary</h2>
+
+  <h3><%= @user.username%>'s Contacts:</h3>
+
+  <ul>
+    <% @user.agents.each do |agent| %>
+      <li><%= link_to agent.name, agent %> // Email: <%= agent.email %></li>
+    <% end %>
+  </ul>
+
+  <h3><%= @user.username%>'s Funeral Preferences:</h3>
+
+  <% if @funeral.disposition == "Other" %>
+    <div>
+      Disposition: <%= @funeral.disposition_other %>
+    </div>
+  <% else  %>
+    <div>
+      Disposition: <%= @funeral.disposition %>
+    </div>
+  <% end %>
+  <div>
+    Officiant: <%= @funeral.officiant %>
+  </div>
+  <div>
+    Eulogist: <%= @funeral.eulogist_1 %>
+  </div>
+  <div>
+    Eulogist: <%= @funeral.eulogist_2 %>
+  </div>
+  <div>
+    Service Type: <%= @funeral.service_type %>
+  </div>
+  <div>
+    Religion: <%= @funeral.religion.name %>
+  </div>
+  <div>
+    Funeral Home Name: <%= @funeral.funeral_home.name %> <br>
+    Funeral Home Phone: <%= @funeral.funeral_home.phone %><br>
+    Funeral Home Address: <%= @funeral.funeral_home.address %>
+
+  </div>
+
+  <%= form_tag edit_funeral_path(@funeral), method: "Get" do %>
+    <%= submit_tag "Edit Funeral Preferences" %>
+  <% end %>
+
+  <%= form_tag funeral_path(@funeral), method: "Delete" do %>
+    <%= submit_tag "Delete Funeral Preferences" %>
+  <% end %><br>
