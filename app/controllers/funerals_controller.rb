@@ -19,6 +19,20 @@ class FuneralsController < ApplicationController
       render :new
     end
 
+    def edit
+      @funeral = Funeral.find(params[:id])
+
+    end
+
+    def update
+
+      if @funeral.update(funeral_params)
+        redirect_to funeral_path(@funeral)
+      else
+        render :edit
+      end
+
+    end
 
 
   end
