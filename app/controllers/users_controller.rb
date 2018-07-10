@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_action :confirm_logged_in, except: [:new, :create]
-  before_action :find_user, only: [:show, :edit, :update]
+  before_action :find_user, only: [:show, :edit, :update, :summary]
 
+
+  def user_summary
+    render :summary
+
+  end
 
   def new
     @user = User.new

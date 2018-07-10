@@ -2,7 +2,32 @@
 
 <div class="menu">
   <h2>Menu</h2>
-  <div class="identity">Logged in as: <%= @user.username %></div>
+
+  <% if @user.agents.empty? && @user.funerals.empty?%>
+
+    <%= link_to "Let's get started", new_funeral_path %>
+
+
+  <% elsif !@user.agents.empty? && @user.funerals.empty?%>
+
+  Link to Agent Index/Show and Link to pick up where you left off, which is with funeral preferences
+
+  <% elsif @user.agents.empty? && !@user.funerals.empty?%>
+
+    Link to Funeral Index/Show and Link to pick up where you left off, which is with agents
+
+  <% elsif !@user.agents.empty? && !@user.funerals.empty?%>
+
+  <!-- Overall Show Link -->
+    <%= link_to "Summary of Your Preferences", users_summary_path %>
+  <% end %>
+
+
+
+
+
+
+  <!-- <div class="identity">Logged in as: <%= @user.username %></div>
   <ul>
     <% if !@user.agents.empty? %>
       <li><%= link_to("See Agent Preferences", agents_path) %></li>
@@ -17,4 +42,4 @@
     <li><%= link_to("See Funeral Preference Statistics", funerals_path) %></li>
     <li><%= link_to("Log Out", access_logout_path) %></li>
   </ul>
-</div>
+</div> -->
