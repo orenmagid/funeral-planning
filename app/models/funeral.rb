@@ -9,10 +9,10 @@ class Funeral < ApplicationRecord
     funerals = Funeral.all
     funeral_home_hash = {}
     funerals.each do |funeral|
-      if funeral_home_hash[funeral.funeral_home]
-        funeral_home_hash[funeral.funeral_home] += 1
+      if funeral_home_hash[funeral.funeral_home.name]
+        funeral_home_hash[funeral.funeral_home.name] += 1
       else
-        funeral_home_hash[funeral.funeral_home] = 1
+        funeral_home_hash[funeral.funeral_home.name] = 1
       end
     end
     funeral_home_hash

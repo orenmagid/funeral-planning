@@ -34,14 +34,21 @@ ActiveRecord::Schema.define(version: 2018_07_09_163625) do
 
   create_table "funerals", force: :cascade do |t|
     t.string "disposition"
-    t.string "disposition_other"
+    t.text "disposition_expand"
     t.string "officiant"
+    t.text "officiant_expand"
     t.string "eulogist_1"
     t.string "eulogist_2"
-    t.string "expense"
+    t.text "eulogist_expand"
+    t.string "financial_plan"
+    t.text "financial_plan_expand"
     t.string "service_type"
+    t.text "service_type_expand"
     t.bigint "religion_id"
+    t.text "religion_expand"
     t.bigint "funeral_home_id"
+    t.text "funeral_home_expand"
+    t.text "general_expand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["funeral_home_id"], name: "index_funerals_on_funeral_home_id"

@@ -2,6 +2,11 @@ class FuneralsController < ApplicationController
   before_action :confirm_logged_in
   before_action :find_funeral, only: [:show, :edit, :update]
 
+  def index
+    @funeral_hash = Funeral.most_popular_funeral_home
+
+  end
+
   def new
     @funeral = Funeral.new
 
