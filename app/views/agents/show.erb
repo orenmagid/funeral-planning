@@ -1,0 +1,7 @@
+<h2><%= @agent.name %></h2>
+<h3><%= @agent.email %></h3>
+Contact for: <%= @agent.user.username %><br><br>
+
+<%= form_tag agent_path(@agent), method: "Delete" do %>
+  <%= submit_tag "Delete Contact" %>
+<% end %><br>
