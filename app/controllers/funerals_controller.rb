@@ -39,8 +39,11 @@ class FuneralsController < ApplicationController
     end
 
     def destroy
+      @user = User.find(session[:user_id])
+      @funeral = @user.funerals[0]
       @funeral.destroy
-      redirect_to users_path(session[:user_id])
+      flash[:notice] = "Your funeral preferences have been deleted."
+      redirect_to user_path(session[:user_id])
     end
 
 

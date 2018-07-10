@@ -50,7 +50,9 @@ class AgentsController < ApplicationController
   end
 
   def find_agent
-    @agent = Agent.find(params[:id])
+    # I changed this, since it was finding the agent with an id that matched the user's id.
+    @user = User.find(session[:user_id])
+    @agent = @user.agents[0]
   end
 
 

@@ -2,6 +2,12 @@
 <h3><%= @agent.email %></h3>
 Contact for: <%= @agent.user.username %><br><br>
 
+
+
+<%= form_tag edit_agent_path(@agent), action: edit_agent_path, method: "Get" do %>
+  <%= submit_tag "Edit Contact" %>
+<% end %>
+
 <%= form_tag agent_path(@agent), method: "Delete" do %>
   <%= submit_tag "Delete Contact" %>
 <% end %><br>

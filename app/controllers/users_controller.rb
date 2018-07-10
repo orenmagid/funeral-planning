@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :confirm_logged_in
   before_action :find_user, only: [:show, :edit, :update]
 
   def new
