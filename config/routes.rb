@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :agents
@@ -17,7 +18,8 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show', as: 'user'
 
 
-  get ':username', to: 'users#show', as: :user_profile
+  get 'home', to: 'users#show', as: :home
+  root "static_pages#home"
 
   get 'access/login'
   post 'access/attempt_login'
