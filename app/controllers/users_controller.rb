@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :confirm_logged_in, except: [:new, :create]
   before_action :find_user, only: [:show, :edit, :update]
+
 
   def new
     @user = User.new
@@ -7,15 +9,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+
+
 
   end
 
   def create
       @user = User.new(user_params)
 
-      if @user.valid?
-          @user.save
+      if @user.save
           # log in user
           session[:user_id] = @user.id
           redirect_to user_path(@user)
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
     end
 
   def edit
-    @user = User.find(params[:id])
+
 
   end
 
@@ -48,9 +50,11 @@ class UsersController < ApplicationController
     end
 
     def find_user
-      @user = User.find(params[:id])
+      @user = User.find(session[:user_id])
 
     end
+
+
 
 
 end

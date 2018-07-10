@@ -2,9 +2,15 @@
 
 <h2>Your Funeral Preferences:</h2>
 
-<div>
-  Disposition: <%= @funeral.disposition %>
-</div>
+<% if @funeral.disposition == "Other" %>
+  <div>
+    Disposition: <%= @funeral.disposition_other %>
+  </div>
+<% else  %>
+  <div>
+    Disposition: <%= @funeral.disposition %>
+  </div>
+<% end %>
 <div>
   Officiant: <%= @funeral.officiant %>
 </div>
@@ -26,3 +32,11 @@
   Funeral Home Address: <%= @funeral.funeral_home.address %>
 
 </div>
+
+<%= form_tag edit_funeral_path(@funeral), action: edit_funeral_path, method: "Get" do %>
+  <%= submit_tag "Edit Funeral Preferences" %>
+<% end %>
+
+<%= form_tag funeral_path(@funeral), method: "Delete" do %>
+  <%= submit_tag "Delete Funeral Preferences" %>
+<% end %><br>

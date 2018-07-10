@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # get '/users/:id', to: 'users#show', as: 'user'
 
 
+  get ':username', to: 'users#show', as: :user_profile
 
   get 'access/login'
   post 'access/attempt_login'
