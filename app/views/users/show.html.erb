@@ -4,7 +4,8 @@
   <h2>Menu</h2>
   <div class="identity">Logged in as: <%= @user.username %></div>
   <ul>
-    <% if @user.funerals %>
+    <% if @user.funerals[0] %>
+      <li><%= link_to("See Funeral Preferences", funeral_path) %></li>
       <li><%= link_to("Update Funeral Preferences", edit_funeral_path) %></li>
     <% else %>
       <li><%= link_to("Specify Funeral Preferences", new_funeral_path) %></li>

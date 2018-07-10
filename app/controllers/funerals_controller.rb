@@ -8,34 +8,42 @@ class FuneralsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
+    @funeral = @user.funerals[0]
 
   end
 
   def create
     @funeral = Funeral.new(funeral_params)
     if @funeral.update(funeral_params)
+      @user = User.find(session[:user_id])
+      @user.funerals << @funeral
       redirect_to funeral_path(@funeral)
     else
       render :new
     end
+  end
 
     def edit
-      @funeral = Funeral.find(params[:id])
+      @user = User.find(session[:user_id])
+      @funeral = @user.funerals[0]
 
     end
 
     def update
-
       if @funeral.update(funeral_params)
         redirect_to funeral_path(@funeral)
       else
         render :edit
       end
+    end
 
+    def destroy
+      @funeral.destroy
+      redirect_to users_path(session[:user_id])
     end
 
 
-  end
 
   private
 
