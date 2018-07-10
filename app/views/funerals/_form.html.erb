@@ -35,7 +35,7 @@
   <div>
     <h3>Service Type</h3>
     <p>What type of service would you like to have?</p>
-    <%= f.select(:service_type, options_for_select(['Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'])) %>
+    <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'])) %>
   </div>
   <div>
     <p>If there's anything else you'd like to tell us about your service type preferences, please do so here.</p>
@@ -43,7 +43,7 @@
   </div>
   <div>
     <h3>Religion</h3>
-    <%= f.collection_select(:religion_id, Religion.all, :id, :name, prompt: true) %>
+    <%= f.collection_select(:religion_id, Religion.all, :id, :name) %>
   </div>
   <div>
     <p>If there's anything else you'd like to tell us about your religious preferences, please do so here.</p>

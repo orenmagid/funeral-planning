@@ -1,6 +1,6 @@
 # === RELIGION SEEDS ===
 
-religion_array = ["Athiest", "Agnostic", "Buddhist", "Christian", "Hindu", "Islamic", "Jain", "Jewish", "Sikh"]
+religion_array = ["Unspecified", "Athiest", "Agnostic", "Buddhist", "Christian", "Hindu", "Islamic", "Jain", "Jewish", "Sikh"]
 
 religion_array.each do |religion|
   Religion.create(name: religion)
@@ -22,4 +22,4 @@ User.create(username: "August", password: "test", email: "augustgiles8@gmail.com
 Agent.create(name: "SuzieQ", email: "DisisSuzie@whatever.com", user_id: 2)
 Agent.create(name: "Joellen", email: "melonmelonmelon@whatever.com", user_id: 1)
 
-#=== 
+#===
