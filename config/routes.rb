@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   get 'users/summary', to: 'users#summary'
 
   resources :contacts
-  resources :expenses
-  resources :funeral_homes
-  resources :religions
+  # resources :funeral_homes
+  # resources :religions
   resources :users
   resources :funerals
 
