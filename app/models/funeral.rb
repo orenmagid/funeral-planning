@@ -15,7 +15,7 @@ class Funeral < ApplicationRecord
         funeral_home_hash[funeral.funeral_home.name] = 1
       end
     end
-    funeral_home_hash
+    funeral_home_hash.sort_by {|_key, value| value}.reverse
   end
 
 end

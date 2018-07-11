@@ -62,7 +62,8 @@ class FuneralsController < ApplicationController
   end
 
   def find_funeral
-    @funeral = Funeral.find(params[:id])
+    @user = User.find(session[:user_id])
+    @funeral = @user.funerals[0]
 
   end
 
