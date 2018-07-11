@@ -21,18 +21,3 @@ Overall List:
 Wednesday Morning:
 * Add and edit language throughout
 * Add CSS to improve user e-xperience
-
-
-August's notes 7/10:
-
-  #== CONSIDER EDITS W/ OREN ===
-  * In Funeral Edit function - the selectors that are not attached to models (Disposition and Service type) are not
-      remembering what the user had selected. Defaulting to first item in list instead.
-  * Flash messages?
-
-  #=== CHANGES MADE ===
-  * Changed relationship between users, user_funerals, and funerals. Has one and has one through relationships now
-      established and changed all through the code
-  * Large Refactor in FuneralsController
-  * Took out form_tags related to buttons, made partial, rendered partial with locals.
-  * Slight modification to language
