@@ -3,6 +3,7 @@
 
   <% if @user.contacts.empty? && !@user.funeral%>
     <%= link_to "Start Here", new_funeral_path %>
+    <%= link_to("See Funeral Preference Statistics", funerals_path) %>
 
   <% elsif !@user.contacts.empty? && !@user.funeral%>
     <%= link_to "Create Funeral Preferences", new_funeral_path(@user) %><br><br>
@@ -11,16 +12,41 @@
   <% elsif @user.contacts.empty? && @user.funeral%>
     <%= link_to "Your Funeral Preferences", funeral_path(@user) %><br><br>
     <%= link_to "Create Contacts", new_contact_path(@user) %>
+    <%= link_to("See Funeral Preference Statistics", funerals_path) %>
 
   <% elsif !@user.contacts.empty? && @user.funeral%>
     <%= link_to "Your Funeral Preferences", funeral_path(@user) %><br><br>
     <%= link_to "Your Contacts", contacts_path %><br><br>
     <%= link_to "Summary of Your Preferences", users_summary_path %>
+    <%= link_to("See Funeral Preference Statistics", funerals_path) %>
 
   <% end %>
 
-  <br><br>
+</div>
 
-  <%= link_to("See Funeral Preference Statistics", funerals_path) %>
-
+<div class="card-deck">
+  <div class="card">
+    <%= image_tag "project_photo1.jpeg", height: 200  %>
+    <div class="card-body">
+      <h5 class="card-title">Start Here</h5>
+      <p class="card-text">Information...</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <%= image_tag "project_photo1.jpeg", height: 200  %>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <%= image_tag "project_photo1.jpeg", height: 200  %>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
 </div>
