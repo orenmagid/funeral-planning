@@ -1,15 +1,24 @@
 <h2>Statistics</h2>
 
-<h3>Funeral Homes Our Users Plan to Use:</h3>
+<h3>Our User's Top Ten Funeral Homes:</h3>
 
 <ul>
   <% @funeral_hash[0..10].each do |name, count| %>
-   <li><%= name %>: <%= pluralize(count, "user") %></li>
+   <li><%= name %>: <%= ((count.to_f/@total_count_of_funerals.to_f).round(2) * 100).to_i%>% </li>
   <% end %>
 </ul>
 
+<h3>Our User's Dispotion Preferences: </h3>
 
-Most popular funeral_homes - Oren
-Percentage breakdown by disposition (independent of religion and by religion) - Oren
+<% @disposition_hash[0..10].each do |name, count| %>
+    <li><%= name %>: <%= ((count.to_f/@total_count_of_users.to_f).round(2) * 100).to_i%>% </li>
+  <% end %>
+</ul>
+
+<h3>Our User's Dispotion Preferences, by Religion: </h3>
+
+
+
+<!-- Most popular funeral_homes - Oren -->
 Percentage breakdown by service_type (independent of religion and by religion) - August
 Maybe breakdown of users by religion - August

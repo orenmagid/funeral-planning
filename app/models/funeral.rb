@@ -15,7 +15,16 @@ class Funeral < ApplicationRecord
         funeral_home_hash[funeral.funeral_home.name] = 1
       end
     end
-    funeral_home_hash.sort_by {|_key, value| value}.reverse
+    funeral_home_hash.sort_by {|key, value| value}.reverse
+  end
+
+  def self.total_count_of_funerals
+    funerals = Funeral.all
+    total_count = 0
+    funerals.each do |funeral|
+      total_count += 1
+    end
+    total_count
   end
 
 end
