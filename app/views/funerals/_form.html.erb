@@ -3,7 +3,7 @@
   <div>
     <h3>Funeral Disposition</h3>
     <p>You will need to choose between a burial or cremation. With a burial your body is interred in the ground either with or without embalming. With a cremation your body is cremated to ash and the remains are placed in a container of your choice.You also have the option of a green burial, which is an environmentally conscious way of handling your deceased body. Go to the Green Burial Council website for additional information.</p>
-    <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'])) %>
+    <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
   </div>
   <div>
     <p>If there's anything else you'd like to tell us about your disposition preferences, please do so here.</p>
@@ -33,7 +33,7 @@
   <div>
     <h3>Service Type</h3>
     <p>What type of service would you like to have?</p>
-    <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'])) %>
+    <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'], selected: @funeral.service_type)) %>
   </div>
   <div>
     <p>If there's anything else you'd like to tell us about your service type preferences, please do so here.</p>
