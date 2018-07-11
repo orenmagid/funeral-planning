@@ -1,0 +1,9 @@
+<h3><%= @user.username%>'s Contacts:</h3>
+
+<div>
+  <% @user.contacts.each do |contact| %>
+  <div>
+    <%= contact.name %> // Email: <%= contact.email %> <%= render partial: "shared/crud_button", locals: {path: edit_contact_path(@user), method: "GET", value: "Edit Contact"} %> <%= render partial: "shared/crud_button", locals: {path: contact_path(@user), method: "DELETE", value: "Delete Contact"} %><br>
+  </div>
+  <% end %>
+</div>

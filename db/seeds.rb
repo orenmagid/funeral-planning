@@ -8,7 +8,7 @@ end
 
 #=== FUNERAL HOME SEEDS ===
 
-FuneralHome.create(name: "I am not sure at this time")
+FuneralHome.create(name: "I am not sure at this time", phone: "0000000000", address: "-")
 FuneralHome.create(name: "Devol Funeral Home", phone:"(202) 333-6680", address: "2222 Wisconsin Ave NW, Washington, DC 20007")
 FuneralHome.create(name: "Marshall-March Funeral Home DC", phone:"(202) 723-1250", address: "4217 9th St NW, Washington, DC 20011")
 FuneralHome.create(name: "Taylor's Funeral Home", phone:"(202) 882-2732", address: "1722 North Capitol St NW, Washington, DC 20002")

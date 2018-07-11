@@ -1,13 +1,8 @@
 <h2>User Summary</h2>
+<%= link_to 'Print Summary Page', 'users_summary_path', :onclick => 'window.print();return false;'%>
 
-  <h3><%= @user.username%>'s Contacts:</h3>
+<%= render  "contacts/list_user_contacts" %>
 
-  <ul>
-    <% @user.contacts.each do |contact| %>
-      <li><%= link_to contact.name, contact %> // Email: <%= contact.email %></li>
-    <% end %>
-  </ul>
+<%= render partial: "shared/crud_button", locals: {path: new_contact_path(@user), method: "GET", value: "Create a New Contact"} %>
 
-  <%= render partial: "shared/crud_button", locals: {path: new_contact_path(@user), method: "GET", value: "Create a New Contact"} %>
-
-  <%= render partial: "shared/funerals_show.html.erb", locals: { funeral: @funeral } %>
+<%= render partial: "shared/funerals_show.html.erb", locals: { funeral: @funeral } %>
