@@ -1,6 +1,6 @@
 Oren:
 <!-- * Links back to Menu -->
-* Stat stuff
+* Stat stuff - I just barely started.
 <!-- * Add new expand fields to funeral show and overall show pages - it's ugly, but I did it. Also had to make changes to the strong params. -->
 
 August:
