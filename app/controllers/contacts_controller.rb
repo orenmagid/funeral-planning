@@ -9,27 +9,31 @@ class ContactsController < ApplicationController
 
   def new
     @contact = Contact.new
+    @user = User.find(session[:user_id])
   end
 
   def create
     @contact = Contact.new(contact_params)
     @contact.user_id = session[:user_id]
     if @contact.save
-      redirect_to @contact
+    
+      redirect_to user_contacts_path(@contact.user)
     else
       render "new"
     end
   end
 
   def show
+    @user = User.find(session[:user_id])
   end
 
   def edit
+    @user = User.find(session[:user_id])
   end
 
   def update
     if @contact.update(contact_params)
-      redirect_to @contact
+      redirect_to user_contact_path(@contact.user, @contact)
     else
       render "edit"
     end
@@ -37,7 +41,8 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    redirect_to contacts_path
+
+    redirect_to user_contacts_path
   end
 
   private

@@ -4,12 +4,15 @@ Rails.application.routes.draw do
 
   get 'users/summary', to: 'users#summary'
 
-  resources :contacts
+
   # resources :funeral_homes
   # resources :religions
-  resources :users, param: :username
+  resources :users, param: :username do
+    resources :contacts
+    resources :funerals
+  end
 
-  resources :funerals
+
 
 
 

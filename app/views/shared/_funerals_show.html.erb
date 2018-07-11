@@ -52,8 +52,8 @@
 </div>
 
 <div class="button">
-<%= render partial: "shared/crud_button", locals: {path: edit_funeral_path(@funeral), method: "GET", value: "Edit Funeral Preferences"} %>
+<%= render partial: "shared/crud_button", locals: {path: edit_user_funeral_path(@user, @user.funeral), method: "GET", value: "Edit Funeral Preferences"} %>
 </div>
 <div class="button">
-<%= render partial: "shared/crud_button", locals: {path: funeral_path(@funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>
+<%= render partial: "shared/crud_button", locals: {path: user_funeral_path(@user, @user.funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>
 </div>

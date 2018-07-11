@@ -2,4 +2,4 @@
 
 <%= render partial: "shared/object_errors.erb", locals: { object: @funeral } %>
 
-<%= render partial: "form.html.erb", locals: { funeral: @funeral } %>
+<%= render partial: "form.html.erb", locals: { funeral: @funeral, user: @funeral.user } %>

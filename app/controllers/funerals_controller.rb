@@ -13,13 +13,14 @@ class FuneralsController < ApplicationController
 
   def new
     @funeral = Funeral.new
+    @user = User.find(session[:user_id])
   end
 
   def create
     @funeral = Funeral.new(funeral_params)
     if @funeral.update(funeral_params)
       @funeral.user = User.find(session[:user_id])
-      redirect_to funeral_path(@funeral)
+      redirect_to user_funeral_path(params[:user_username], @funeral)
     else
       render :new
     end
@@ -33,7 +34,7 @@ class FuneralsController < ApplicationController
 
   def update
     if @funeral.update(funeral_params)
-      redirect_to funeral_path(@funeral)
+      redirect_to user_funeral_path(@user, @user.funeral)
     else
       render :edit
     end
