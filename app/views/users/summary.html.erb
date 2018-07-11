@@ -11,3 +11,5 @@
   <%= render partial: "shared/crud_button", locals: {path: new_contact_path(@user), method: "GET", value: "Create a New Contact"} %>
 
   <%= render partial: "shared/funerals_show.html.erb", locals: { funeral: @funeral } %>
+
+<%= link_to 'print', 'users_summary_path', :onclick => 'window.print();return false;'%>

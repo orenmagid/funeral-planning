@@ -51,7 +51,7 @@
 
     <h3>Funeral Home</h3>
     <p>If you have a funeral home in mind, indicate it here.</p>
-    <%= f.collection_select(:funeral_home_id, FuneralHome.all, :id, :name, :include_blank => true) %>
+    <%= f.collection_select(:funeral_home_id, FuneralHome.all, :id, :name) %>
     <p>If it is not listed above, please submit information about your desired funeral home below.</p>
     <%= f.fields_for :funeral_home, funeral.build_funeral_home do |funeral_home_fields| %>
     <%= f.label :name %>
