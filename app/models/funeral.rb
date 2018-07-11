@@ -1,8 +1,8 @@
 class Funeral < ApplicationRecord
   belongs_to :funeral_home
   belongs_to :religion
-  has_many :user_funerals, :dependent => :destroy
-  has_many :users, through: :user_funerals
+  has_one :user_funeral, :dependent => :destroy
+  has_one :user, through: :user_funeral
   accepts_nested_attributes_for :funeral_home, reject_if: proc { |attributes| attributes['name'].blank? }
 
   def self.most_popular_funeral_home

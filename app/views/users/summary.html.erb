@@ -8,9 +8,7 @@
     <% end %>
   </ul>
 
-  <%= form_tag new_agent_path(@user), method: "Get" do %>
-    <%= submit_tag "Create a New Contact" %>
-  <% end %>
+  <%= render partial: "shared/crud_button", locals: {path: new_agent_path(@user), method: "GET", value: "Create a New Contact"} %>
 
   <h3><%= @user.username%>'s Funeral Preferences:</h3>
 
@@ -64,10 +62,6 @@
   <div>
     Other Wishes: <%= @funeral.general_expand %>
   </div>
-  <%= form_tag edit_funeral_path(@funeral), method: "Get" do %>
-    <%= submit_tag "Edit Funeral Preferences" %>
-  <% end %>
 
-  <%= form_tag funeral_path(@funeral), method: "Delete" do %>
-    <%= submit_tag "Delete Funeral Preferences" %>
-  <% end %><br>
+  <%= render partial: "shared/crud_button", locals: {path: edit_funeral_path(@funeral), method: "GET", value: "Edit Funeral Preferences"} %>
+  <%= render partial: "shared/crud_button", locals: {path: funeral_path(@funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>

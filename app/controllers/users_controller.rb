@@ -4,49 +4,38 @@ class UsersController < ApplicationController
 
 
   def summary
-
-    @funeral = @user.funerals[0]
-
+    @funeral = @user.funeral
     render :summary
-
   end
 
   def new
     @user = User.new
-
   end
 
   def show
     @page = "menu"
-
-
   end
 
   def create
-      @user = User.new(user_params)
-
-      if @user.save
-          # log in user
-          session[:user_id] = @user.id
-          redirect_to user_path(@user)
-      else
-          render :new
-      end
+    @user = User.new(user_params)
+    if @user.save
+        # log in user
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+    else
+        render :new
     end
+  end
 
   def edit
-
-
   end
 
   def update
-
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
       render :edit
     end
-
   end
 
 
@@ -59,10 +48,6 @@ class UsersController < ApplicationController
 
     def find_user
       @user = User.find(session[:user_id])
-
     end
-
-
-
 
 end

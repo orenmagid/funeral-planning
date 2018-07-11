@@ -6,6 +6,4 @@
   <% end %>
 </ul>
 
-<%= form_tag new_agent_path(@user), method: "Get" do %>
-  <%= submit_tag "Create a New Contact" %>
-<% end %>
+<%= render partial: "shared/crud_button", locals: {path: new_agent_path(@user), method: "GET", value: "Create a New Contact"} %>
