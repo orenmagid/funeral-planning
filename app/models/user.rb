@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :agents
+  has_many :contacts
   has_one :user_funeral
   has_one :funeral, through: :user_funeral
 
@@ -28,7 +28,7 @@ class User < ApplicationRecord
     disposition_hash = {}
     User.all.each do |user|
       if user.funeral
-        
+
         if disposition_hash[user.funeral.disposition]
           disposition_hash[user.funeral.disposition] += 1
         else

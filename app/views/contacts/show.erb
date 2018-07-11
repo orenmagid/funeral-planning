@@ -1,0 +1,6 @@
+<h2><%= @contact.name %></h2>
+<h3><%= @contact.email %></h3>
+Contact for: <%= @contact.user.username %><br><br>
+
+<%= render partial: "shared/crud_button", locals: {path: edit_contact_path(@contact), method: "GET", value: "Edit Contact"} %>
+<%= render partial: "shared/crud_button", locals: {path: contact_path(@contact), method: "DELETE", value: "Delete Contact"} %>
