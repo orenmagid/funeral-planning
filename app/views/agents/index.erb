@@ -5,3 +5,7 @@
     <li><%= link_to agent.name, agent %> // Email: <%= agent.email %></li>
   <% end %>
 </ul>
+
+<%= form_tag new_agent_path(@user), method: "Get" do %>
+  <%= submit_tag "Create a New Contact" %>
+<% end %>

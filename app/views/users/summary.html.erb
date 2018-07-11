@@ -8,6 +8,10 @@
     <% end %>
   </ul>
 
+  <%= form_tag new_agent_path(@user), method: "Get" do %>
+    <%= submit_tag "Create a New Contact" %>
+  <% end %>
+
   <h3><%= @user.username%>'s Funeral Preferences:</h3>
 
   <div>
