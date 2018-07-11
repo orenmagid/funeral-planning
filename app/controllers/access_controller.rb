@@ -23,7 +23,7 @@ class AccessController < ApplicationController
 
     if authorized_user
       session[:user_id] = authorized_user.id
-      flash[:notice] = "You are now logged in."
+      # flash[:notice] = "You are now logged in."
       redirect_to(home_path(@user))
     else
       flash.now[:notice] = "Invalid username/password combination."
@@ -34,7 +34,7 @@ class AccessController < ApplicationController
 
   def logout
     session.clear
-    flash[:notice] = 'Logged out'
+    # flash[:notice] = 'Logged out'
     redirect_to(access_login_path)
   end
 
