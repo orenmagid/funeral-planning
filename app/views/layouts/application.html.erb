@@ -20,7 +20,7 @@
       <% if @page == "menu" %>
       <% else %>
         <div class="backlink">
-          <%= link_to("<< Back to Menu", user_path(session[:user_id]), :class => 'back-link') %>
+          <%= link_to("<< Back to Menu", home_path, :class => 'back-link') %>
         </div>
       <% end %>
     <% end %>

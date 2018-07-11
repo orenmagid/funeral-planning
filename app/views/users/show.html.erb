@@ -1,12 +1,12 @@
 <div class="menu">
-  <h2>Homepage</h2>
+  <h2> <%= @user.username.capitalize %>'s Homepage</h2>
 
   <% if @user.contacts.empty? && !@user.funeral%>
     <%= link_to "Start Here", new_funeral_path %>
 
   <% elsif !@user.contacts.empty? && !@user.funeral%>
     <%= link_to "Create Funeral Preferences", new_funeral_path(@user) %><br><br>
-    <%= link_to "Your Contacts", contacts_path(@user) %>
+    <%= link_to "Your Contacts", contacts_path %>
 
   <% elsif @user.contacts.empty? && @user.funeral%>
     <%= link_to "Your Funeral Preferences", funeral_path(@user) %><br><br>
@@ -14,7 +14,7 @@
 
   <% elsif !@user.contacts.empty? && @user.funeral%>
     <%= link_to "Your Funeral Preferences", funeral_path(@user) %><br><br>
-    <%= link_to "Your Contacts", contacts_path(@user) %><br><br>
+    <%= link_to "Your Contacts", contacts_path %><br><br>
     <%= link_to "Summary of Your Preferences", users_summary_path %>
 
   <% end %>
