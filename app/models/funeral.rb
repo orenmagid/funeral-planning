@@ -5,6 +5,7 @@ class Funeral < ApplicationRecord
   has_one :user, through: :user_funeral
   accepts_nested_attributes_for :funeral_home, reject_if: proc { |attributes| attributes['name'].blank? }
 
+
   def self.most_popular_funeral_home
     funerals = Funeral.all
     funeral_home_hash = {}
