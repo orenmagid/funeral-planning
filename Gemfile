@@ -5,6 +5,8 @@ ruby '2.3.3'
 
 gem 'pry'
 
+gem 'jquery-rails'
+
 gem 'dependent-fields-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
