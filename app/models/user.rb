@@ -1,3 +1,5 @@
+require 'pry'
+
 class User < ApplicationRecord
   has_secure_password
 
@@ -27,11 +29,12 @@ class User < ApplicationRecord
   def self.most_popular_dispositions_by_religion
     disposition_hash = {}
     User.all.each do |user|
+      
       if user.funeral
         if !disposition_hash[user.funeral.religion]
-          disposition_hash[user.funeral.religion][user.funeral.disposition] += 1
+          disposition_hash[user.funeral.religion.name] = {user.funeral.disposition => 1}
         else
-          disposition_hash[user.funeral.religion][user.funeral.disposition] = 1
+          isposition_hash[user.funeral.religion.name][user.funeral.disposition] += 1
         end
       end
     end
