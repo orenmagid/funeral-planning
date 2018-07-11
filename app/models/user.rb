@@ -2,8 +2,8 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :agents
-  has_many :user_funerals
-  has_many :funerals, through: :user_funerals
+  has_one :user_funeral
+  has_one :funeral, through: :user_funeral
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
