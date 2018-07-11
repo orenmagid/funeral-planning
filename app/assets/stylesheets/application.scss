@@ -13,31 +13,6 @@
  *= require_tree .
  *= require_self
  */
- /* Primary stylesheet */
 
-
- /* Structure */
- #header {
-   height: 4em;
-   padding-top: 1em;
-   text-align: center;
-   background: #b3c2db;
-
-
-   h1 { margin: 0; padding: 0; }
- }
-
- #content { padding: 10px; }
-
- #footer {
-   clear: both;
-   height: 2.5em;
-   text-align: center;
-   background: #b3c2db;
-
-
-   p {
-     margin: 0;
-     padding: 0.5em 1em;
-   }
- }
+ @import "bootstrap";
+ @import "main";
