@@ -7,6 +7,7 @@ class FuneralsController < ApplicationController
     @total_count_of_funerals = Funeral.total_count_of_funerals
     @disposition_hash = User.most_popular_dispositions
     @total_count_of_users = User.total_count_of_users
+    @disposition_by_religion = User.most_popular_dispositions_by_religion
   end
 
   def new

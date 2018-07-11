@@ -28,14 +28,12 @@ class User < ApplicationRecord
     disposition_hash = {}
     User.all.each do |user|
       if user.funeral
-        
-        if disposition_hash[user.funeral.disposition]
-          disposition_hash[user.funeral.disposition] += 1
+        if !disposition_hash[user.funeral.religion]
+          disposition_hash[user.funeral.religion][user.funeral.disposition] += 1
         else
-          disposition_hash[user.funeral.disposition] = 1
+          disposition_hash[user.funeral.religion][user.funeral.disposition] = 1
         end
       end
-
     end
     disposition_hash.sort_by {|key, value| value}.reverse
   end
