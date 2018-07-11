@@ -1,6 +1,4 @@
-
-
-<h2>Your Funeral Preferences:</h2>
+<h3><%= @user.username%>'s Funeral Preferences:</h3>
 
 <div>
   Disposition: <%= funeral.disposition %>
@@ -52,10 +50,6 @@
 <div>
   Other Wishes: <%= funeral.general_expand %>
 </div>
-<%= form_tag edit_funeral_path(funeral), action: edit_funeral_path, method: "Get" do %>
-  <%= submit_tag "Edit Funeral Preferences" %>
-<% end %>
 
-<%= form_tag funeral_path(funeral), method: "Delete" do %>
-  <%= submit_tag "Delete Funeral Preferences" %>
-<% end %><br>
+<%= render partial: "shared/crud_button", locals: {path: edit_funeral_path(@funeral), method: "GET", value: "Edit Funeral Preferences"} %>
+<%= render partial: "shared/crud_button", locals: {path: funeral_path(@funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>
