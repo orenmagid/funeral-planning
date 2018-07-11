@@ -4,8 +4,7 @@ Oren:
 August:
 * Refactoring?
 * Stat stuff
-    Percentage breakdown by service_type (independent of religion and by religion) - August
-    Maybe breakdown of users by religion - August
+
 
 Overall List:
 * Email summary to contacts? (compose message)
@@ -16,4 +15,7 @@ Overall List:
 
 Wednesday:
 * Add and edit language throughout
-* Add CSS to improve user e-xperience
+* Add CSS to improve user experience
+
+August:
+* Finish cards in Homepage before any other CSS stuff.
