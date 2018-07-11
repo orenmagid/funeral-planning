@@ -21,6 +21,7 @@ oren = User.create(username: "Oren", password: "test", email: "autoimpedicis@gma
 august = User.create(username: "August", password: "test", email: "augustgiles8@gmail.com")
 sammy = User.create(username: "Sam", password: "test", email: "sammy@sammy.com")
 fatima = User.create(username: "Fatima", password: "test", email: "fatima@fatima.com")
+jimmy = User.create(username: "Jimmy", password: "test", email: "jimmy@jimmy.com")
 
 
 #=== AGENT SEEDS ===
@@ -59,6 +60,20 @@ fatima.funeral = Funeral.create(disposition: "Burial at Sea",
   financial_plan: "I have not yet made funeral arrangements",
   service_type: "Casual Gathering", service_type_expand: "But make it fun",
   religion_id: 5, funeral_home_id: 3, general_expand: "I love you all")
+
+jimmy.funeral = Funeral.create(disposition: "Burial at Sea",
+  officiant: "Bro", officiant_expand: "Broseph", eulogist_1: "Dad",
+  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  financial_plan: "I have not yet made funeral arrangements",
+  service_type: "Casual Gathering", service_type_expand: "But make it fun",
+  religion_id: 2, funeral_home_id: 3, general_expand: "I love you all")
+
+  oren.save
+  sammy.save
+  august.save
+  fatima.save
+  jimmy.save
+
 
 
 

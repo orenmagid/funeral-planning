@@ -6,7 +6,8 @@ Oren:
 August:
 * Refactoring?
 * Stat stuff
-
+    Percentage breakdown by service_type (independent of religion and by religion) - August
+    Maybe breakdown of users by religion - August
 
 Overall List:
 * Print Overall Summary to PDF?
