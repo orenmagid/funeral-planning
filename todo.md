@@ -19,6 +19,6 @@ Overall List:
 * I think we should perhaps have text saying that they can specify their wishes about their ashes, if they are cremated, in the "expand" field. At least, that's something I think some people would expect--a place to note that.
 * Change all occurrences in DB of "agent" to "contact"
 
-Wednesday Morning:
+Wednesday:
 * Add and edit language throughout
 * Add CSS to improve user e-xperience

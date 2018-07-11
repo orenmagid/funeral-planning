@@ -1,22 +1,22 @@
 <div class="menu">
   <h2>Homepage</h2>
 
-  <% if @user.agents.empty? && !@user.funeral%>
+  <% if @user.contacts.empty? && !@user.funeral%>
 
     <%= link_to "Start Here", new_funeral_path %>
 
 
-  <% elsif !@user.agents.empty? && !@user.funeral%>
+  <% elsif !@user.contacts.empty? && !@user.funeral%>
 
     <%= link_to "Specify Your Funeral Preferences", new_funeral_path(@user) %><br><br>
-    <%= link_to "Summary of Your Preferences", agents_path(@user) %>
+    <%= link_to "Summary of Your Preferences", contacts_path(@user) %>
 
-  <% elsif @user.agents.empty? && @user.funeral%>
+  <% elsif @user.contacts.empty? && @user.funeral%>
 
-    <%= link_to "Specify Your Contacts", new_agent_path(@user) %><br><br>
+    <%= link_to "Specify Your Contacts", new_contact_path(@user) %><br><br>
     <%= link_to "Summary of Your Preferences", funeral_path(@user) %>
 
-  <% elsif !@user.agents.empty? && @user.funeral%>
+  <% elsif !@user.contacts.empty? && @user.funeral%>
 
     <%= link_to "Summary of Your Preferences", users_summary_path %>
   <% end %>

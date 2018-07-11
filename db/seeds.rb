@@ -23,8 +23,8 @@ User.create(username: "Fatima", password: "test", email: "fatima@fatima.com")
 
 #=== AGENT SEEDS ===
 
-Agent.create(name: "SuzieQ", email: "DisisSuzie@whatever.com", user_id: 2)
-Agent.create(name: "Joellen", email: "melonmelonmelon@whatever.com", user_id: 1)
+Contact.create(name: "SuzieQ", email: "DisisSuzie@whatever.com", user_id: 2)
+Contact.create(name: "Joellen", email: "melonmelonmelon@whatever.com", user_id: 1)
 
 #=== FUNERAL SEEDS ===
 

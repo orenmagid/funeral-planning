@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :agents
+  has_many :contacts
   has_one :user_funeral
   has_one :funeral, through: :user_funeral
 

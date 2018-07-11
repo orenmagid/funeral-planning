@@ -1,9 +1,0 @@
-<h2><%= @user.username%>'s Contacts:</h2>
-
-<ul>
-  <% @agents.each do |agent| %>
-    <li><%= link_to agent.name, agent %> // Email: <%= agent.email %></li>
-  <% end %>
-</ul>
-
-<%= render partial: "shared/crud_button", locals: {path: new_agent_path(@user), method: "GET", value: "Create a New Contact"} %>
