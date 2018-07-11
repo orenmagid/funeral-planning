@@ -28,9 +28,10 @@ class User < ApplicationRecord
     @disposition_hash = {}
     User.all.each do |user|
       if user.funeral
-        if !@disposition_hash[user.funeral.religion]
+        if !@disposition_hash[user.funeral.religion.name]
           @disposition_hash[user.funeral.religion.name] = {user.funeral.disposition => 1}
-
+        elsif !@disposition_hash[user.funeral.religion.name][user.funeral.disposition]
+          @disposition_hash[user.funeral.religion.name][user.funeral.disposition] = 1
         else
           @disposition_hash[user.funeral.religion.name][user.funeral.disposition] += 1
         end
@@ -43,7 +44,11 @@ class User < ApplicationRecord
     @religion_hash = {}
     @disposition_hash.each do |religion, disp_hash|
       disp_hash.each do |disp, count|
-        @religion_hash[religion] = count
+        if !@religion_hash[religion]
+          @religion_hash[religion] = count
+        else
+          @religion_hash[religion] += count
+        end
       end
     end
     @religion_hash

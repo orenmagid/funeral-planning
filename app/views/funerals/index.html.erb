@@ -16,11 +16,11 @@
   <% end %>
 </ul>
 
-<h3>Our User's Dispotion Preferences, by Religion: </h3>
+<h3>Our User's Dispotion Preferences by Religion: </h3>
 <ul>
   <% @disposition_by_religion.each do |religion, disp_hash| %>
+    <li><strong><%= religion %>: </strong></li>
     <% disp_hash.each do |disp, count| %>
-      <li><strong><%= religion %>: </strong></li>
       <ul>
       <li><%= disp %>: <%= ((count.to_f/@religion_hash[religion].to_f).round(2) * 100).to_i%>% </li>
       </ul>
@@ -28,6 +28,3 @@
     <% end %>
   <% end %>
 </ul>
-
-Temporary display of @disposition_by_religion: 
-<%= @disposition_by_religion %>
