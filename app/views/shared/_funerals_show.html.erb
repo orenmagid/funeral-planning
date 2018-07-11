@@ -51,5 +51,9 @@
   Other Wishes: <%= funeral.general_expand %>
 </div>
 
+<div class:"button">
 <%= render partial: "shared/crud_button", locals: {path: edit_funeral_path(@funeral), method: "GET", value: "Edit Funeral Preferences"} %>
+</div>
+<div class:"button">
 <%= render partial: "shared/crud_button", locals: {path: funeral_path(@funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>
+</div>
