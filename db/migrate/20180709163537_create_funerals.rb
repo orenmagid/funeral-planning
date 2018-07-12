@@ -4,9 +4,6 @@ class CreateFunerals < ActiveRecord::Migration[5.2]
       t.string :disposition
       t.text :disposition_expand
       t.string :officiant
-      t.text :officiant_expand
-      t.string :eulogist_1
-      t.string :eulogist_2
       t.text :eulogist_expand
       t.string :financial_plan
       t.text :financial_plan_expand
