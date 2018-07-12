@@ -32,8 +32,7 @@ Contact.create(name: "Joellen", email: "melonmelonmelon@whatever.com", user_id: 
 #=== FUNERAL SEEDS ===
 
 oren.funeral = Funeral.create(disposition: "Cremation", disposition_expand: "I'm scared",
-  officiant: "Pop", officiant_expand: "Popovich", eulogist_1: "Dad",
-  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  officiant: "Pop", eulogist_expand: "Make it fun",
   financial_plan: "Funeral Insurance",
   financial_plan_expand: "I'm not positive I actually have the insurance",
   service_type: "Traditional Funeral", service_type_expand: "But make it fun",
@@ -41,29 +40,25 @@ oren.funeral = Funeral.create(disposition: "Cremation", disposition_expand: "I'm
   funeral_home_expand: "I think", general_expand: "I love you all")
 
 august.funeral = Funeral.create(disposition: "Burial",
-  officiant: "Bro", officiant_expand: "Broseph", eulogist_1: "Dad",
-  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  officiant: "Bro", eulogist_expand: "Make it fun",
   financial_plan: "Funeral Trust",
   service_type: "Traditional Funeral", service_type_expand: "But make it fun",
   religion_id: 1, funeral_home_id: 2, general_expand: "I love you all")
 
 sammy.funeral = Funeral.create(disposition: "Donate Body to Science",
-  officiant: "Bro", officiant_expand: "Broseph", eulogist_1: "Dad",
-  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  officiant: "Bro", eulogist_expand: "Make it fun",
   financial_plan: "I have not yet made funeral arrangements",
   service_type: "Traditional Funeral", service_type_expand: "But make it fun",
   religion_id: 3, funeral_home_id: 4, general_expand: "I love you all")
 
 fatima.funeral = Funeral.create(disposition: "Burial at Sea",
-  officiant: "Bro", officiant_expand: "Broseph", eulogist_1: "Dad",
-  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  officiant: "Bro", eulogist_expand: "Make it fun",
   financial_plan: "I have not yet made funeral arrangements",
   service_type: "Casual Gathering", service_type_expand: "But make it fun",
   religion_id: 2, funeral_home_id: 3, general_expand: "I love you all")
 
 jimmy.funeral = Funeral.create(disposition: "Burial at Sea",
-  officiant: "Bro", officiant_expand: "Broseph", eulogist_1: "Dad",
-  eulogist_2: "Mom", eulogist_expand: "Make it fun",
+  officiant: "Bro", eulogist_expand: "Make it fun",
   financial_plan: "I have not yet made funeral arrangements",
   service_type: "Casual Gathering", service_type_expand: "But make it fun",
   religion_id: 2, funeral_home_id: 3, general_expand: "I love you all")
