@@ -7,7 +7,7 @@
 
   <% elsif !@user.contacts.empty? && !@user.funeral%>
     <%= link_to "Create Funeral Preferences", new_user_funeral_path(@user, @user.funeral) %><br><br>
-    <%= link_to "Your Contacts", user_contacts_path %>
+    <%= link_to "Your Contacts", user_contacts_path(@user) %>
 
   <% elsif @user.contacts.empty? && @user.funeral%>
     <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
