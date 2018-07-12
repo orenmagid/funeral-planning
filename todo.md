@@ -16,4 +16,4 @@ Thursday:
 August:
 * Finish cards in Homepage before any other CSS stuff.
 
-  <!-- <%= image_tag "project_photo1.jpeg", height: 200  %> -->
+  <!-- <%= image_tag "https://imgur.com/Iew7NCX", height: 200  %> -->

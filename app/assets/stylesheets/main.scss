@@ -16,10 +16,19 @@ h3 {
   padding: 25px 0px;
 }
 
-.button {
-  display: inline;
-  background-color: purple;
+.btn {
+  display: inline-block;
+  margin: 5px 5px 0px 0px;
 }
+
+.inline {
+  display: inline-block;
+}
+
+.contact-cards {
+  padding: 25px;
+}
+
 
 #footer{
     display: table;
