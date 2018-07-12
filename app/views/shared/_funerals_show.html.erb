@@ -1,70 +1,56 @@
 <h3><%= @user.username%>'s Funeral Preferences:</h3>
 
 <div>
-  <h5>Service Type:</h5>
-  <p> <%= funeral.service_type %> </p>
+  <div>
+    <h4>Service Type:</h4>
+    <p> <%= funeral.service_type %> </p>
+  </div>
+
+
+  <div>
+    <h5>Officiant:</h5>
+    <p> <%= funeral.officiant %> </p>
+  </div>
+
+  <div>
+    <h6>Additional Speakers:</h6>
+    <% if funeral.eulogist_expand == " " %>
+      <p> None provided.</p>
+    <% else %>
+      <p> <%= funeral.eulogist_expand %> </p>
+    <% end %>
+  </div>
+
+  <div>
+    <h6>Additional Serive Type Details:</h6>
+    <% if funeral.service_type_expand == " " %>
+      <p> None provided.</p>
+    <% else %>
+      <p> <%= funeral.service_type_expand %> </p>
+    <% end %>
+  </div>
+
 </div>
 
 <div>
-  <h6>Additional Serive Type Details:</h6>
-  <% if funeral.service_type_expand == " " %>
-    <p> <%= funeral.service_type_expand %> </p>
-  <% else %>
-    <p> None provided.</p>
-  <% end %>
-</div>
-<div>
-
-<div>
-  <h5>Officiant:</h5>
-  <p> <%= funeral.officiant %> </p>
-</div>
-
-<div>
-  <h6>Additional Officiant Details:</h6>
-  <% if funeral.officiant_expand == " " %>
-    <p> <%= funeral.officiant_expand %> </p>
-  <% else %>
-    <p> None provided.</p>
-  <% end %>
-</div>
-
-<div>
-  <h5>Eulogist:</h5>
-  <p> <%= funeral.eulogist_1 %> </p>
-</div>
-<div>
-  <h5>Eulogist</h5>
-  <p> <%= funeral.eulogist_2 %> </p>
-</div>
-<div>
-  <h6>Additional Eulogist Details:</h6>
-  <% if funeral.eulogist_expand == " " %>
-    <p> <%= funeral.eulogist_expand %> </p>
-  <% else %>
-    <p> None provided.</p>
-  <% end %>
-</div>
-
-<div>
-  <h5>Disposition:</h5>
+  <h4>Disposition:</h4>
   <p> <%= funeral.disposition %> </p>
 </div>
 <div>
   <h6>Additional Disposition Details:</h6>
   <% if funeral.disposition_expand == " " %>
-    <p> <%= funeral.disposition_expand %> </p>
-  <% else %>
     <p> None provided.</p>
+  <% else %>
+    <p> <%= funeral.disposition_expand %> </p>
   <% end %>
 </div>
 
 <div>
   <% if funeral.funeral_home.name == "I am not sure at this time" %>
-    <h5>Funeral Home:</h5>
+    <h4>Funeral Home:</h4>
     <p> <%= funeral.funeral_home.name %> </p>
   <% else %>
-    <h5>Funeral Home Name:</h5>
+    <h4>Funeral Home Name:</h4>
     <p> <%= funeral.funeral_home.name %> </p>
     <h5>Funeral Home Phone:</h5>
     <p><%= funeral.funeral_home.phone %> </p>
@@ -76,44 +62,44 @@
 <div>
   <h6>Additional Funeral Home Details:</h6>
   <% if funeral.funeral_home_expand == " " %>
-    <p> <%= funeral.funeral_home_expand %> </p>
-  <% else %>
     <p> None provided.</p>
+  <% else %>
+    <p> <%= funeral.funeral_home_expand %> </p>
   <% end %>
 </div>
 
 <div>
-  <h5>Religion:</h5>
+  <h4>Religion:</h4>
   <p> <%= funeral.religion.name %> </p>
 </div>
 <div>
   <h6>Additional Religion Details:</h6>
    <% if funeral.religion_expand == " " %>
-     <p> <%= funeral.religion_expand %> </p>
-   <% else %>
      <p> None provided.</p>
+   <% else %>
+     <p> <%= funeral.religion_expand %> </p>
    <% end %>
 </div>
 
 <div>
-  <h5>Financial Plan:</h5>
+  <h4>Financial Plan:</h4>
   <p> <%= funeral.financial_plan %> </p>
 </div>
 <div>
   <h6>Additional Financial Plan Details:</h6>
   <% if funeral.financial_plan_expand == " " %>
-    <p> <%= funeral.financial_plan_expand %> </p>
+     <p> None provided.</p>
   <% else %>
-    <p> None provided.</p>
+    <p> <%= funeral.financial_plan_expand %> </p>
   <% end %>
 </div>
 
 <div>
   <h5>Other Wishes:</h5>
   <% if funeral.general_expand == " " %>
-    <p> <%= funeral.general_expand %> </p>
-  <% else %>
     <p> None provided.</p>
+  <% else %>
+    <p> <%= funeral.general_expand %> </p>
   <% end %>
 </div>
 
@@ -123,9 +109,9 @@
   <p class="card-text"><small class="text-muted"> <%= @user.funeral.updated_at.strftime("Last updated on %m/%d/%Y, at %l:%M %p %Z") %></small></p>
 <% end %>
 
-<div class="button">
+<div class="button inline">
 <%= render partial: "shared/crud_button", locals: {path: edit_user_funeral_path(@user, @user.funeral), method: "GET", value: "Edit Funeral Preferences"} %>
 </div>
-<div class="button">
+<div class="button inline">
 <%= render partial: "shared/crud_button", locals: {path: user_funeral_path(@user, @user.funeral), method: "DELETE", value: "Delete Funeral Preferences"} %>
 </div>

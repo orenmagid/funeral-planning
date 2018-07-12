@@ -17,10 +17,18 @@ h3 {
 }
 
 .btn {
-  display: inline;
-  margin: 10px;
-
+  display: inline-block;
+  margin: 5px 5px 0px 0px;
 }
+
+.inline {
+  display: inline-block;
+}
+
+.contact-cards {
+  padding: 25px;
+}
+
 
 #footer{
     display: table;
