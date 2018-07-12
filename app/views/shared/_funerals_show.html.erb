@@ -1,54 +1,120 @@
 <h3><%= @user.username%>'s Funeral Preferences:</h3>
 
 <div>
-  Disposition: <%= funeral.disposition %>
+  <h5>Service Type:</h5>
+  <p> <%= funeral.service_type %> </p>
+</div>
+
+<div>
+  <h6>Additional Serive Type Details:</h6>
+  <% if funeral.service_type_expand == " " %>
+    <p> <%= funeral.service_type_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
 </div>
 <div>
-  Additional Disposition Details: <%= funeral.disposition_expand %>
+
+<div>
+  <h5>Officiant:</h5>
+  <p> <%= funeral.officiant %> </p>
+</div>
+
+<div>
+  <h6>Additional Officiant Details:</h6>
+  <% if funeral.officiant_expand == " " %>
+    <p> <%= funeral.officiant_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
+</div>
+
+<div>
+  <h5>Eulogist:</h5>
+  <p> <%= funeral.eulogist_1 %> </p>
 </div>
 <div>
-  Officiant: <%= funeral.officiant %>
+  <h5>Eulogist</h5>
+  <p> <%= funeral.eulogist_2 %> </p>
 </div>
 <div>
-  Additional Officiant Details: <%= funeral.officiant_expand %>
+  <h6>Additional Eulogist Details:</h6>
+  <% if funeral.eulogist_expand == " " %>
+    <p> <%= funeral.eulogist_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
+</div>
+
+<div>
+  <h5>Disposition:</h5>
+  <p> <%= funeral.disposition %> </p>
 </div>
 <div>
-  Eulogist: <%= funeral.eulogist_1 %>
+  <h6>Additional Disposition Details:</h6>
+  <% if funeral.disposition_expand == " " %>
+    <p> <%= funeral.disposition_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
+</div>
+
+<div>
+  <% if funeral.funeral_home.name == "I am not sure at this time" %>
+    <h5>Funeral Home:</h5>
+    <p> <%= funeral.funeral_home.name %> </p>
+  <% else %>
+    <h5>Funeral Home Name:</h5>
+    <p> <%= funeral.funeral_home.name %> </p>
+    <h5>Funeral Home Phone:</h5>
+    <p><%= funeral.funeral_home.phone %> </p>
+    <h5>Funeral Home Address:</h5>
+    <p> <%= funeral.funeral_home.address %> </p>
+  <% end %>
+
 </div>
 <div>
-  Eulogist <%= funeral.eulogist_2 %>
+  <h6>Additional Funeral Home Details:</h6>
+  <% if funeral.funeral_home_expand == " " %>
+    <p> <%= funeral.funeral_home_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
+</div>
+
+<div>
+  <h5>Religion:</h5>
+  <p> <%= funeral.religion.name %> </p>
 </div>
 <div>
-  Additional Eulogist Details: <%= funeral.eulogist_expand %>
+  <h6>Additional Religion Details:</h6>
+   <% if funeral.religion_expand == " " %>
+     <p> <%= funeral.religion_expand %> </p>
+   <% else %>
+     <p> None provided.</p>
+   <% end %>
+</div>
+
+<div>
+  <h5>Financial Plan:</h5>
+  <p> <%= funeral.financial_plan %> </p>
 </div>
 <div>
-  Service Type: <%= funeral.service_type %>
+  <h6>Additional Financial Plan Details:</h6>
+  <% if funeral.financial_plan_expand == " " %>
+    <p> <%= funeral.financial_plan_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
 </div>
+
 <div>
-<div>
-  Additional Serive Type Details: <%= funeral.service_type_expand %>
-</div>
-  Religion: <%= funeral.religion.name %>
-</div>
-<div>
-  Additional Religion Details: <%= funeral.religion_expand %>
-</div>
-<div>
-  Funeral Home Name: <%= funeral.funeral_home.name %> <br>
-  Funeral Home Phone: <%= funeral.funeral_home.phone %><br>
-  Funeral Home Address: <%= funeral.funeral_home.address %>
-</div>
-<div>
-  Additional Funeral Home Details: <%= funeral.funeral_home_expand %>
-</div>
-<div>
-  Financial Plan: <%= funeral.financial_plan %>
-</div>
-<div>
-  Additional Financial Plan Details: <%= funeral.financial_plan_expand %>
-</div>
-<div>
-  Other Wishes: <%= funeral.general_expand %>
+  <h5>Other Wishes:</h5>
+  <% if funeral.general_expand == " " %>
+    <p> <%= funeral.general_expand %> </p>
+  <% else %>
+    <p> None provided.</p>
+  <% end %>
 </div>
 
 <% if @user.funeral.created_at == @user.funeral.updated_at %>
