@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user_id = session[:user_id]
     if @contact.save
-      session[:contacts] << @contact
+      
       redirect_to user_contacts_path(@contact.user)
     else
       flash[:notice] = "Contact must have name and valid email address."
