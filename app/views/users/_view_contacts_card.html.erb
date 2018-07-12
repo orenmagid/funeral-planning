@@ -1,7 +1,8 @@
 <div class="card">
   <%= image_tag "project_photo1.jpeg", height: 200  %>
   <div class="card-body">
-    <h5 class="card-title">View or Edit Your Contacts</h5>
+    <a href="<%= user_contacts_path(@user) %>">
+    <h5 class="card-title">View or Edit Your Contacts</h5> </a>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
   </div>

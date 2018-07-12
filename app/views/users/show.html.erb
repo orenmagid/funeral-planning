@@ -1,33 +1,28 @@
-<div class="menu">
 
-  <h2> <%= @user.username.capitalize %>'s Homepage</h2>
+<h2> <%= @user.username.capitalize %>'s Homepage</h2>
 
-  <div class="card-deck">
-    <% if @user.contacts.empty? && !@user.funeral%>
-    
-      <%= link_to "Start Here", new_user_funeral_path(@user, @user.funeral) %> <br><br>
-      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
-
-    <% elsif !@user.contacts.empty? && !@user.funeral%>
-      <%= link_to "Create Funeral Preferences", new_user_funeral_path(@user, @user.funeral) %><br><br>
-      <%= link_to "Your Contacts", user_contacts_path %>
-
-    <% elsif @user.contacts.empty? && @user.funeral%>
-      <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
-      <%= link_to "Create Contacts", new_user_contact_path(@user) %><br><br>
-      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
-
-    <% elsif !@user.contacts.empty? && @user.funeral%>
-      <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
-      <%= link_to "Your Contacts", user_contacts_path(@user) %><br><br>
-      <%= link_to "Summary of Your Preferences", users_summary_path %><br><br>
-      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
-
-    <% end %>
-
-  </div>
+<div class="card-deck">
+  <% if @user.contacts.empty? && !@user.funeral%>
+    <%= render partial: "users/start_card.html.erb", locals: { object: @user } %>
+    <%= render partial: "users/view_funeral_statistics_card.html.erb", locals: { object: @user } %>
 
 
 
+  <% elsif !@user.contacts.empty? && !@user.funeral%>
+    <%= render partial: "users/create_funeral_card.html.erb", locals: { object: @user } %>
+    <%= render partial: "users/view_contacts_card.html.erb", locals: { object: @user } %>
 
-  </div>
+
+  <% elsif @user.contacts.empty? && @user.funeral%>
+    <%= render partial: "users/view_funeral_card.html.erb", locals: { object: @user } %>
+    <%= render partial: "users/create_contacts_card.html.erb", locals: { object: @user } %>
+    <%= render partial: "users/view_funeral_statistics_card.html.erb", locals: { object: @user } %>
+
+  <% elsif !@user.contacts.empty? && @user.funeral%>
+    <%= render partial: "users/summary_card.html.erb", locals: { object: @user } %>
+
+    <%= render partial: "users/view_funeral_statistics_card.html.erb", locals: { object: @user } %>
+
+  <% end %>
+
+</div>

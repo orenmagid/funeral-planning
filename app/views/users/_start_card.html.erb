@@ -1,8 +1,8 @@
 <div class="card">
   <%= image_tag "project_photo1.jpeg", height: 200  %>
   <div class="card-body">
-    <h5 class="card-title">Start Here</h5>
-    <p class="card-text">We will walk you through the process of designating contacts who will help arrange your future funeral according to your wishes. Then we'll walk you through the process of telling us about your funeral wishes.</p>
+    <a href="<%= new_user_funeral_path(@user, @user.funeral) %>"> <h5 class="card-title">Start Here</h5></a>
+    <p class="card-text">First, we'll walk you through the process of thinking about and documenting your funeral wishes. Then you'll designate contacts to manage your funeral arrangesment on your behalf.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
   </div>
 </div>
