@@ -9,9 +9,14 @@
 
 
   <% elsif !@user.contacts.empty? && !@user.funeral%>
+<<<<<<< HEAD
+    <%= link_to "Create Funeral Preferences", new_user_funeral_path(@user, @user.funeral) %><br><br>
+    <%= link_to "Your Contacts", user_contacts_path(@user) %>
+=======
     <%= render partial: "users/create_funeral_card.html.erb", locals: { object: @user } %>
     <%= render partial: "users/view_contacts_card.html.erb", locals: { object: @user } %>
 
+>>>>>>> 160e061c2485740dd5c4329c5dbf285ad035eacc
 
   <% elsif @user.contacts.empty? && @user.funeral%>
     <%= render partial: "users/view_funeral_card.html.erb", locals: { object: @user } %>
