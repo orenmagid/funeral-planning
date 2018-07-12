@@ -19,7 +19,9 @@ class ContactsController < ApplicationController
       session[:contacts] << @contact
       redirect_to user_contacts_path(@contact.user)
     else
-      render "new"
+      flash[:notice] = "Contact must have name and valid email address."
+      redirect_to new_user_contact_path(@contact.user, @contact)
+      # render new
     end
   end
 
@@ -54,7 +56,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :email)
+    params.require(:contact).permit(:name, :email, :user_username)
   end
 
   def find_contact
