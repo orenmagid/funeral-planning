@@ -28,3 +28,25 @@
     <% end %>
   <% end %>
 </ul>
+
+<h3>Distribution of Service Types Chosen On This Site</h3>
+<ul>
+  <% @service_type_hash.each do |name, count| %>
+   <li><%= name %>: <%= ((count.to_f/@total_count_of_funerals.to_f).round(2) * 100).to_i%>% </li>
+  <% end %>
+</ul>
+
+<br><br><br>
+EDIT THIS!
+<h3>Service Type by Religion:</h3>
+<ul>
+  <% @service_type_religion.each do |services, religion_hash| %>
+    <li><strong><%= services %>: </strong></li>
+    <% religion_hash.each do |religion, count| %>
+      <ul>
+      <li><%= religion %>: <%= ((count.to_f/@religion_hash[religion].to_f).round(2) * 100).to_i%>% </li>
+      </ul>
+
+    <% end %>
+  <% end %>
+</ul>

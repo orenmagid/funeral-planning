@@ -28,18 +28,28 @@ class Funeral < ApplicationRecord
     total_count
   end
 
+  def self.service_type_count
+    arr = self.service_type_array
+    service_hash = arr.each_with_object(Hash.new(0)) {|service, hash| hash[service] += 1}
+  end
+
+  def self.service_type_by_religion
+    service_religion_hash = {}
+    self.all.each do |funeral|
+      if !service_religion_hash[funeral.service_type]
+        service_religion_hash[funeral.service_type] = {funeral.religion.name => 1}
+      elsif !service_religion_hash[funeral.service_type][funeral.religion.name]
+        service_religion_hash[funeral.service_type][funeral.religion.name] = 1
+      else
+        service_religion_hash[funeral.service_type][funeral.religion.name] += 1
+      end
+    end
+    service_religion_hash
+  end
+
+
+  def self.service_type_array
+    self.all.collect {|funeral| funeral.service_type}
+  end
+
 end
-
-
-# def self.most_res
-#   neighborhoods = Neighborhood.all
-#   ratio_hash = {}
-#   neighborhoods.each do |neighborhood|
-#     reservation_count = 0
-#       neighborhood.listings.each do |listing|
-#         reservation_count += listing.reservations.count
-#       end
-#       ratio_hash[neighborhood.name] = reservation_count
-#   end
-#   Neighborhood.find_by(name: ratio_hash.max_by{|k,v| v}[0])
-# end
