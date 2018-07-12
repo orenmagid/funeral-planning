@@ -1,76 +1,33 @@
 <div class="menu">
+
   <h2> <%= @user.username.capitalize %>'s Homepage</h2>
 
-  <% if @user.contacts.empty? && !@user.funeral%>
-    <%= link_to "Start Here", new_user_funeral_path(@user, @user.funeral) %> <br><br>
-    <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
+  <div class="card-deck">
+    <% if @user.contacts.empty? && !@user.funeral%>
+    
+      <%= link_to "Start Here", new_user_funeral_path(@user, @user.funeral) %> <br><br>
+      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
 
-  <% elsif !@user.contacts.empty? && !@user.funeral%>
-    <%= link_to "Create Funeral Preferences", new_user_funeral_path(@user, @user.funeral) %><br><br>
-    <%= link_to "Your Contacts", user_contacts_path %>
+    <% elsif !@user.contacts.empty? && !@user.funeral%>
+      <%= link_to "Create Funeral Preferences", new_user_funeral_path(@user, @user.funeral) %><br><br>
+      <%= link_to "Your Contacts", user_contacts_path %>
 
-  <% elsif @user.contacts.empty? && @user.funeral%>
-    <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
-    <%= link_to "Create Contacts", new_user_contact_path(@user) %><br><br>
-    <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
+    <% elsif @user.contacts.empty? && @user.funeral%>
+      <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
+      <%= link_to "Create Contacts", new_user_contact_path(@user) %><br><br>
+      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
 
-  <% elsif !@user.contacts.empty? && @user.funeral%>
-    <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
-    <%= link_to "Your Contacts", user_contacts_path(@user) %><br><br>
-    <%= link_to "Summary of Your Preferences", users_summary_path %><br><br>
-    <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
+    <% elsif !@user.contacts.empty? && @user.funeral%>
+      <%= link_to "Your Funeral Preferences", user_funeral_path(@user, @user.funeral) %><br><br>
+      <%= link_to "Your Contacts", user_contacts_path(@user) %><br><br>
+      <%= link_to "Summary of Your Preferences", users_summary_path %><br><br>
+      <%= link_to "See Funeral Preference Statistics", user_funerals_path(@user) %>
 
-  <% end %>
+    <% end %>
 
-</div>
+  </div>
 
-<div class="card-deck">
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">Start Here</h5>
-      <p class="card-text">We will walk you through the process of designating contacts who will help arrange your future funeral according to your wishes. Then we'll walk you through the process of telling us about your funeral wishes.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+
+
+
   </div>
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">Designate Contacts</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">View or Edit Your Contacts</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">Tell Us About Your Funeral Wishes</h5>
-      <p class="card-text">Information...</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">View or Edit Your Funeral Wishes</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-  <div class="card">
-    <%= image_tag "project_photo1.jpeg", height: 200  %>
-    <div class="card-body">
-      <h5 class="card-title">View Our Users' Funeral Wish Statistics</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>
-</div>
