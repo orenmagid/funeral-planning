@@ -1,7 +1,9 @@
 class FuneralsController < ApplicationController
   before_action :confirm_logged_in
   before_action :find_funeral, only: [:show, :edit, :update, :destroy]
-
+  # nice use of before_actions -- is it necessary to be logged in for 
+  # everything?  (the answer may be yes)
+  
   def index
     @funeral_hash = Funeral.most_popular_funeral_home
     @total_count_of_funerals = Funeral.total_count_of_funerals

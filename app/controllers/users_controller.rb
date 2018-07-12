@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @page = "menu"
+    @page = "menu" # what does this do?
   end
 
   def create

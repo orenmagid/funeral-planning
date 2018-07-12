@@ -1,9 +1,13 @@
 class Funeral < ApplicationRecord
+  # good use of instance methods here--many people would
+  # put this logic in the controller but it's much better 
+  # off here in the model
   belongs_to :funeral_home
   belongs_to :religion
   has_one :user_funeral, :dependent => :destroy
   has_one :user, through: :user_funeral
-  accepts_nested_attributes_for :funeral_home, reject_if: proc { |attributes| attributes['name'].blank? }
+  accepts_nested_attributes_for :funeral_home, 
+    reject_if: proc { |attributes| attributes['name'].blank? }
 
 
   def self.most_popular_funeral_home
@@ -20,6 +24,7 @@ class Funeral < ApplicationRecord
   end
 
   def self.total_count_of_funerals
+    # kinda overkill when Funeral.count is a thing ;)
     funerals = Funeral.all
     total_count = 0
     funerals.each do |funeral|

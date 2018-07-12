@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # there's a lot of routes here that are unused.  Be careful
+  # to only make routes as you need them
+  
   get 'static_pages/home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

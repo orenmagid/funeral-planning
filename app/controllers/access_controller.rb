@@ -13,6 +13,9 @@ class AccessController < ApplicationController
   end
 
   def attempt_login
+    # this logic is really confusing and seems to be some spaghetti
+    # code. Might be worth a second look to refactor and cut down
+    # on duplicate variables or unnecessary logic
     if params[:username].present? && params[:password].present?
       found_user = User.where(:username => params[:username]).first
       if found_user
