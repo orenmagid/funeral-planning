@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     if @user.save
         # log in user
         session[:user_id] = @user.id
+        session[:contacts] = []
         redirect_to user_path(@user)
     else
         render :new

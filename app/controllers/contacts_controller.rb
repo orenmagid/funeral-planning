@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user_id = session[:user_id]
     if @contact.save
-    
+      session[:contacts] << @contact
       redirect_to user_contacts_path(@contact.user)
     else
       render "new"
@@ -29,11 +29,17 @@ class ContactsController < ApplicationController
 
   def edit
     @user = User.find(session[:user_id])
+    if @contact.user == @user
+      render :edit
+    else
+      flash[:notice] = "Not a valid contact."
+      redirect_to user_contacts_path
+    end
   end
 
   def update
     if @contact.update(contact_params)
-      redirect_to user_contact_path(@contact.user, @contact)
+      redirect_to user_contacts_path
     else
       render "edit"
     end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # resources :funeral_homes
   # resources :religions
   resources :users, param: :username do
-    resources :contacts
+    resources :contacts, except: [:show]
     resources :funerals
   end
 
