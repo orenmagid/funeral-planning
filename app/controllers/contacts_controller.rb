@@ -20,7 +20,6 @@ class ContactsController < ApplicationController
     else
       flash[:notice] = "Contact must have name and valid email address."
       redirect_to new_user_contact_path(@contact.user, @contact)
-      # render new
     end
   end
 
