@@ -13,20 +13,6 @@ class User < ApplicationRecord
   def to_param
     username
   end
-  
-  def self.most_popular_dispositions
-    disposition_hash = {}
-    User.all.each do |user|
-      if user.funeral
-        if disposition_hash[user.funeral.disposition]
-          disposition_hash[user.funeral.disposition] += 1
-        else
-          disposition_hash[user.funeral.disposition] = 1
-        end
-      end
-    end
-    disposition_hash.sort_by {|key, value| value}.reverse
-  end
 
   def self.most_popular_dispositions_by_religion
     @disposition_hash = {}

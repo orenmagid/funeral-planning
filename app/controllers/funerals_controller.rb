@@ -5,12 +5,13 @@ class FuneralsController < ApplicationController
   def index
     @funeral_hash = Funeral.most_popular_funeral_home
     @total_count_of_funerals = Funeral.total_count_of_funerals
-    @disposition_hash = User.most_popular_dispositions
     @total_count_of_users = User.total_count_of_users
     @disposition_by_religion = User.most_popular_dispositions_by_religion
     @religion_hash = User.religion_hash
     @service_type_hash = Funeral.service_type_count
     @service_type_religion = Funeral.service_type_by_religion
+    @disposition_hash = Funeral.disposition_count
+    @service_type_disposition = Funeral.service_type_by_disposition
   end
 
   def new

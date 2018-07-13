@@ -11,7 +11,7 @@
 <h3>Our User's Dispotion Preferences: </h3>
 
 <ul>
-  <% @disposition_hash[0..10].each do |name, count| %>
+  <% @disposition_hash.each do |name, count| %>
       <li><%= name %>: <%= ((count.to_f/@total_count_of_users.to_f).round(2) * 100).to_i%>% </li>
   <% end %>
 </ul>
@@ -36,15 +36,26 @@
   <% end %>
 </ul>
 
-<br><br><br>
-EDIT THIS!
 <h3>Service Type by Religion:</h3>
 <ul>
   <% @service_type_religion.each do |services, religion_hash| %>
     <li><strong><%= services %>: </strong></li>
     <% religion_hash.each do |religion, count| %>
       <ul>
-      <li><%= religion %>: <%= ((count.to_f/@religion_hash[religion].to_f).round(2) * 100).to_i%>% </li>
+      <li><%= religion %>: <%= ((count.to_f/@service_type_hash[services].to_f).round(2) * 100).to_i%>% </li>
+      </ul>
+
+    <% end %>
+  <% end %>
+</ul>
+
+<h3>Service Type by Disposition:</h3>
+<ul>
+  <% @service_type_disposition.each do |services, disposition_hash| %>
+    <li><strong><%= services %>: </strong></li>
+    <% disposition_hash.each do |disposition, count| %>
+      <ul>
+      <li><%= disposition %>: <%= ((count.to_f/@service_type_hash[services].to_f).round(2) * 100).to_i%>% </li>
       </ul>
 
     <% end %>

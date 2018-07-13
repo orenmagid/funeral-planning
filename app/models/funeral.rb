@@ -30,7 +30,7 @@ class Funeral < ApplicationRecord
 
   def self.service_type_count
     arr = self.service_type_array
-    service_hash = arr.each_with_object(Hash.new(0)) {|service, hash| hash[service] += 1}
+    arr.each_with_object(Hash.new(0)) {|service, hash| hash[service] += 1}
   end
 
   def self.service_type_by_religion
@@ -47,9 +47,34 @@ class Funeral < ApplicationRecord
     service_religion_hash
   end
 
+  def self.disposition_count
+    arr = self.disposition_array
+    arr.each_with_object(Hash.new(0)) {|disposition, hash| hash[disposition] += 1}
+  end
+
+  def self.service_type_by_disposition
+    service_religion_hash = {}
+    self.all.each do |funeral|
+      if !service_religion_hash[funeral.service_type]
+        service_religion_hash[funeral.service_type] = {funeral.disposition => 1}
+      elsif !service_religion_hash[funeral.service_type][funeral.disposition]
+        service_religion_hash[funeral.service_type][funeral.disposition] = 1
+      else
+        service_religion_hash[funeral.service_type][funeral.disposition] += 1
+      end
+    end
+    service_religion_hash
+  end
+
+
+#========= HELPER METHOD ==========
 
   def self.service_type_array
     self.all.collect {|funeral| funeral.service_type}
+  end
+
+  def self.disposition_array
+    self.all.collect {|funeral| funeral.disposition}
   end
 
 end
