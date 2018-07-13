@@ -1,5 +1,5 @@
 /* All =========================== */
-#header{
+#std-header{
   padding: 100px 50px 25px;
   background-color: #7A93AC;
   color: white;
@@ -73,4 +73,9 @@ h3 {
 .header-link a:active {
   text-decoration: none;
   color: white;
+}
+
+#splash-photo {
+  background-repeat: no-repeat;
+  opacity: 0.9;
 }
