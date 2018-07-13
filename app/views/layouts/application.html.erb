@@ -31,7 +31,7 @@
     <div class="container">
       <div id="main">
         <% if !flash[:notice].blank? %>
-          <div class="notice">
+          <div class="alert alert-danger notice" role="alert">
             <%= flash[:notice] %>
           </div>
         <% end %>
