@@ -23,6 +23,8 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Disposition</h3>
     <div>
@@ -36,6 +38,8 @@
       <%= f.text_area :disposition_expand%>
     </div>
   </div>
+
+  <hr class="my-4">
 
   <div>
     <h3>Funeral Home</h3>
@@ -60,6 +64,8 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Religion</h3>
     <p>Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx" target=”_blank”>a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
@@ -71,6 +77,8 @@
       <%= f.text_area :religion_expand%>
     </div>
   </div>
+
+  <hr class="my-4">
 
   <div>
     <h3>Financial Arrangments</h3>
@@ -85,14 +93,18 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Other Wishes</h3>
     <p>Use this space for any additional information that we haven't already asked you about. For example, you may have thoughts about music you'd like to accompany your service.</p>
     <%= f.text_area :general_expand%>
   </div>
 
+  <hr class="my-4">
+
   <div>
-    <%= f.submit "Submit Funeral Preferences" %>
+    <%= f.submit "Submit Preferences", type: "button", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 
 <% end %>
