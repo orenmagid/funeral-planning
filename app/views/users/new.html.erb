@@ -1,10 +1,12 @@
 <h2>Create a new user account</h2>
 
+<div class="col-8 inline">
+
 <%= render partial: "form.html.erb", locals: { object: @user } %>
-<br>
-<br>
-<p>If you already have an account, login here.</p>
+
+</div>
 
 <div class="inline">
-  <a href="/access/login" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Login</a>
+  <p>If you already have an account, login here.</p>
+  <a href="/access/login" class="btn btn-outline-primary" role="button" aria-pressed="true">Login</a>
 </div>

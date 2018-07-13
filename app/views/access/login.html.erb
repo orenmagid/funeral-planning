@@ -1,6 +1,6 @@
 <h2>Please Login</h2>
 
-<div class="login">
+<div class="login inline col-6">
   <%= form_tag(access_attempt_login_path, :method => :post) do %>
   <table>
     <tr>
@@ -15,10 +15,9 @@
   </table>
   <% end %>
 </div>
-<div class="top-margin">
-<p>Don't have an account yet? Create your account today!</p>
-</div>
 
 <div class="inline">
-  <a href="/users/new" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Create New User</a>
+  <p>Don't have an account yet? Create your account today!</p>
+
+    <a href="/users/new" class="btn btn-outline-primary" role="button" aria-pressed="true">Create New User</a>
 </div>
