@@ -24,7 +24,9 @@ class UsersController < ApplicationController
         session[:contacts] = []
         redirect_to user_path(@user)
     else
-        render :new
+        @user = User.new(user_params)
+        flash[:notice] = "Please provide a valid username, email, and password."
+        redirect_to new_user_path
     end
   end
 
