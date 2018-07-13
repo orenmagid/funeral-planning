@@ -17,7 +17,7 @@ class AccessController < ApplicationController
       found_user = User.where(:username => params[:username]).first
       if found_user
         authorized_user = found_user.authenticate(params[:password])
-        @user = authorized_user
+        # @user = authorized_user
       end
     end
 

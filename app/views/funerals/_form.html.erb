@@ -4,7 +4,7 @@
 <div>
     <h3 class="display-4">Service Type</h3>
     <div>
-      <p>What type of service would you like to have? You can begin learning more about your options <a href="http://www.nfda.org/consumer-resources/planning-a-funeral/service-options-types-of-tributes">here</a>. </p>
+      <p>What type of service would you like to have? You can begin learning more about your options <a href="http://www.nfda.org/consumer-resources/planning-a-funeral/service-options-types-of-tributes" target=”_blank”>here</a>. </p>
       <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'], selected: @funeral.service_type)) %>
     </div>
     <div>
@@ -29,7 +29,7 @@
     <h3 class="display-4">Disposition</h3>
     <div class="lead">
       <p>"Disposition" is the term for what will be done with one's body after passing&mdash;either cremation or burial.</p>
-      <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite. You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/">Green Burial Council</a> for additional information.</p>
+      <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite. You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/" target=”_blank”>Green Burial Council</a> for additional information.</p>
       <p>Cremation reduces your remains to ash that can either be scattered, housed at a cemetery, or kept at home.</p>
       <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
     </div>
@@ -67,8 +67,13 @@
   <hr class="my-4">
 
   <div>
+<<<<<<< HEAD
     <h3 class="display-4">Religion</h3>
     <p class="lead">Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx">a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
+=======
+    <h3>Religion</h3>
+    <p>Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx" target=”_blank”>a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
+>>>>>>> 17aaa317c9672fd03475c00f9b02db341967de54
     <div>
       <%= f.collection_select(:religion_id, Religion.all, :id, :name) %>
     </div>
