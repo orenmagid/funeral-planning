@@ -1,19 +1,27 @@
 <%= form_for @user  do |f| %>
-  <div>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+  <div class="form-group row">
+    <%= f.label :username, class: "right col-md-3 col-form-label" %>
+    <div class="col">
+      <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+    </div>
   </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group row">
+      <%= f.label :email, class: "right col-md-3 col-form-label" %>
+    <div class="col">
+      <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+    </div>
   </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-group row">
+    <%= f.label :password, class: "right col-md-3 col-form-label" %>
+    <div class="col">
+      <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+    </div>
   </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="form-group row">
+    <%= f.label :password_confirmation, class: "right col-md-3 col-form-label" %>
+    <div class="col">
+      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
+    </div>
   </div>
     <%= f.submit %>
 <% end %>

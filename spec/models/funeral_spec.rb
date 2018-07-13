@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Funeral, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "Associations" do
+    it { should belong_to(:funeral_home) }
+    it { should belong_to(:religion) }
+    it { should have_one(:user_funeral) }
+    it { should have_one(:user) }
+  end
+
 end

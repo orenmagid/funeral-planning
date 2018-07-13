@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "static_pages/home", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe  'static_pages home page' do
+    it "can display home page" do
+      assign(:user, User.new(username: "Billy"))
+
+      render
+
+      expect(rendered).to match (/Login/)
+    end
+  end
+
 end
