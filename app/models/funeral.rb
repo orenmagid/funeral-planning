@@ -20,12 +20,7 @@ class Funeral < ApplicationRecord
   end
 
   def self.total_count_of_funerals
-    funerals = Funeral.all
-    total_count = 0
-    funerals.each do |funeral|
-      total_count += 1
-    end
-    total_count
+    self.all.count
   end
 
   def self.service_type_count
