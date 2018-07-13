@@ -27,25 +27,25 @@
     <h3>Disposition</h3>
     <div>
       <p>"Disposition" is the term for what will be done with one's body after passing&mdash;either cremation or burial.</p>
-      <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite.You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/">Green Burial Council</a> for additional information.</p>
+      <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite. You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/">Green Burial Council</a> for additional information.</p>
       <p>Cremation reduces your remains to ash that can either be scattered, housed at a cemetery, or kept at home.</p>
       <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
     </div>
     <div>
-  
-      <%= f.text_area :disposition_expand, placeholder: "Do you have an idea of where you'd like to buried or scattered? Is there anything else you'd like someone to know about your wishes here?"%>
+      <p>Use this space for any additional information about your disposition wishes. For example, if you'd like to be cremated, you can use this space to indicate what you'd like done with your remains.</p>
+      <%= f.text_area :disposition_expand%>
     </div>
   </div>
 
   <div>
     <h3>Funeral Home</h3>
-    <p>The role of a Funeral Home is to assist in the process of helping families through many of these decisions we've gone over. They will be taking care of the disposition and, if you want, will help with the service. It's not unusual to look up funeral homes and call them for more information.</p>
+    <p>Funeral homes help families through many of these decisions. They typically handle disposition and also help plan and coordinate the service. It's probably a good idea to get in touch with some local funeral homes about how they can help you and your loved ones.</p>
     <div>
-      <p>If you have a funeral home in mind, indicate it here.</p>
+      <p>If you already have a funeral home in mind, please indicate that here.</p>
       <%= f.collection_select(:funeral_home_id, FuneralHome.all, :id, :name) %>
     </div>
     <div>
-      <p>If it is not listed above, please submit information about your desired funeral home below.</p>
+      <p>If your funeral home of choice is not listed above, please tell us about it below.</p>
       <%= f.fields_for :funeral_home, funeral.build_funeral_home do |funeral_home_fields| %>
       <%= f.label :name %>
       <%= funeral_home_fields.text_field :name %>
@@ -55,39 +55,39 @@
       <%= funeral_home_fields.text_field :address %>
       <% end %>
     </div>
-    <div>Is there anything else you'd like someone to know about your funeral home preferences or arrangements?</p>
+    <div>Use this space for any additional information about funeral home preferences or arrangements.</p>
       <%= f.text_area :funeral_home_expand%>
     </div>
   </div>
 
   <div>
     <h3>Religion</h3>
-    <p>Often, one's religious preferences will have an impact on their wishes when it comes to end of life. For example, some religions might have a timeline for when someone should be buried. Do you have a religious preference?
+    <p>Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx">a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
     <div>
       <%= f.collection_select(:religion_id, Religion.all, :id, :name) %>
     </div>
     <div>
-      <p>Is there anything specific about your beliefs that would be helpful for someone to know when makeing arrangements?</p>
+      <p>Use this space for any additional information about your religious beliefs relevant to your funeral arrangements.</p>
       <%= f.text_area :religion_expand%>
     </div>
   </div>
 
   <div>
     <h3>Financial Arrangments</h3>
-    <p>Making preparations with a financial institution or a funeral home is a very helpful way to make sure that whoever is taking care of your arrangements is prepared. There are many different options for setting funds aside.</p>
+    <p>Making advanced financial arrangements with a financial institution or a funeral home can help ease the pressure on those responsible for arranging your funeral. There are many different options for setting aside funds.<p>
     <div>
-      <p>Have you made any financial arrangements already that someone should know about?</p>
+      <p>If you have already made financial arrangements, please indicate this here.</p>
       <%= f.select(:financial_plan, options_for_select(['I have not yet made financial arrangements', 'Funeral Trust', 'Pre-Need Arrangments Through Funeral Home', 'Cemetery Plot', 'Funeral Insurance','Other - Specify Below'])) %>
     </div>
     <div>
-      <p>Is there any other information about those arrangements that someone should know about?</p>
+      <p>Use this space for any additional information about financial arrangements.</p>
       <%= f.text_area :financial_plan_expand%>
     </div>
   </div>
 
   <div>
     <h3>Other Wishes</h3>
-    <p>As ways to engage with a person's passing can vary widely, is there anything that might be important for you that we didn't specify here? For example - You'd like your family to get together or there's specific music you'd like to have played.</p>
+    <p>Use this space for any additional information that we haven't already asked you about. For example, you may have thoughts about music you'd like to accompany your service.</p>
     <%= f.text_area :general_expand%>
   </div>
 
