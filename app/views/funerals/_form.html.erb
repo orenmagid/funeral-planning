@@ -23,6 +23,8 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Disposition</h3>
     <div>
@@ -32,10 +34,12 @@
       <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
     </div>
     <div>
-  
+
       <%= f.text_area :disposition_expand, placeholder: "Do you have an idea of where you'd like to buried or scattered? Is there anything else you'd like someone to know about your wishes here?"%>
     </div>
   </div>
+
+  <hr class="my-4">
 
   <div>
     <h3>Funeral Home</h3>
@@ -60,6 +64,8 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Religion</h3>
     <p>Often, one's religious preferences will have an impact on their wishes when it comes to end of life. For example, some religions might have a timeline for when someone should be buried. Do you have a religious preference?
@@ -71,6 +77,8 @@
       <%= f.text_area :religion_expand%>
     </div>
   </div>
+
+  <hr class="my-4">
 
   <div>
     <h3>Financial Arrangments</h3>
@@ -85,14 +93,18 @@
     </div>
   </div>
 
+  <hr class="my-4">
+
   <div>
     <h3>Other Wishes</h3>
     <p>As ways to engage with a person's passing can vary widely, is there anything that might be important for you that we didn't specify here? For example - You'd like your family to get together or there's specific music you'd like to have played.</p>
     <%= f.text_area :general_expand%>
   </div>
 
+  <hr class="my-4">
+
   <div>
-    <%= f.submit "Submit Funeral Preferences" %>
+    <%= f.submit "Submit Preferences", type: "button", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 
 <% end %>
