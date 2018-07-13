@@ -18,11 +18,11 @@
       <% if session[:user_id] %>
         <% if @page == "menu" %>
         <% else %>
-          <div class="backlink col-2">
-            <a href="/home" class="btn btn-outline-light" role="button" aria-pressed="true">Back to Menu</a>
+          <div class="backlink col-1">
+            <a href="/home" class="btn btn-outline-light" role="button" aria-pressed="true">Menu</a>
           </div>
         <% end %>
-        <div class="backlink col-2">
+        <div class="backlink col-1">
           <a href="/access/logout" class="btn btn-outline-light" role="button" aria-pressed="true">Logout</a>
         </div>
       <% end %>
