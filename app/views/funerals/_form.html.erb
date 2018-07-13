@@ -34,13 +34,8 @@
       <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
     </div>
     <div>
-<<<<<<< HEAD
-
-      <%= f.text_area :disposition_expand, placeholder: "Do you have an idea of where you'd like to buried or scattered? Is there anything else you'd like someone to know about your wishes here?"%>
-=======
       <p>Use this space for any additional information about your disposition wishes. For example, if you'd like to be cremated, you can use this space to indicate what you'd like done with your remains.</p>
       <%= f.text_area :disposition_expand%>
->>>>>>> 67121fadbb31fe9376aa1ad1c80a42664116cbc0
     </div>
   </div>
 
