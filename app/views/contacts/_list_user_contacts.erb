@@ -2,7 +2,11 @@
 
 <div class= "card-deck">
   <% @user.contacts.each do |contact| %>
-  <div class="card contact-cards">
+  <% if @user.contacts.count == 1 %>
+    <div class="card contact-cards col-4">
+  <% else %>
+    <div class="card contact-cards">
+  <%end %>
     <%= contact.name %> // Email: <%= contact.email %>
     <% if contact.created_at == contact.updated_at %>
       <p class="card-text"><small class="text-muted"> <%= contact.created_at.strftime("Created on %m/%d/%Y, at %l:%M %p %Z") %></small></p>
