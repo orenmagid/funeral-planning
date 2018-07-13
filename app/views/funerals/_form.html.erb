@@ -53,12 +53,9 @@
     <div class="top-margin">
       <p>If your funeral home of choice is not listed above, please tell us about it below.</p>
       <%= f.fields_for :funeral_home, funeral.build_funeral_home do |funeral_home_fields| %>
-      <%= f.label :name %>
-      <%= funeral_home_fields.text_field :name %>
-      <%= f.label :phone %>
-      <%= funeral_home_fields.text_field :phone %>
-      <%= f.label :address %>
-      <%= funeral_home_fields.text_field :address %>
+      <%= funeral_home_fields.text_field :name, placeholder: "Name" %>
+      <%= funeral_home_fields.text_field :phone, placeholder: "Phone Number" %>
+      <%= funeral_home_fields.text_field :address, placeholder: "Address" %>
       <% end %>
     </div>
     <div class="top-margin">Use this space for any additional information about funeral home preferences or arrangements.</p>
