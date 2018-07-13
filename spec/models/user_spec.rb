@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
       expect(User.count).to eq(0)
     end
 
-    it "has one users after creating one" do
+    it "has one user after creating one" do
       User.create(username: "Mitch")
       expect(User.count).to eq(0)
     end

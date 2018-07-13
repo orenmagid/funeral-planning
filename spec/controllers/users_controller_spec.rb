@@ -24,18 +24,18 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-    describe  'Get summary' do
-      before(:example) {get :summary}
-
-      it "is a success" do
-        expect(response).to have_http_status(:ok)
-      end
-
-      it "renders 'summary' template" do
-        expect(response).to render_template('summary')
-        # expect(response).to redirect_to(user_path(@user))
-      end
-    end
+    # describe  'Get summary' do
+    #   before(:example) {get :summary}
+    #
+    #   it "is a success" do
+    #     expect(response).to have_http_status(:ok)
+    #   end
+    #
+    #   it "renders 'summary' template" do
+    #     expect(response).to render_template('summary')
+    #     # expect(response).to redirect_to(user_path(@user))
+    #   end
+    # end
 
 
 

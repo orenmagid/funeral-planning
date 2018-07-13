@@ -7,6 +7,9 @@ RSpec.describe Funeral, type: :model do
     it { should belong_to(:religion) }
     it { should have_one(:user_funeral) }
     it { should have_one(:user) }
+    it { accept_nested_attributes_for(:funeral_home) }
+
+
   end
 
 end
