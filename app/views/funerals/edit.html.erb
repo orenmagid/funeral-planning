@@ -1,3 +1,11 @@
-<h2>Please Update Your Funeral Preferences:</h2>
+<div class="jumbotron">
 
-<%= render partial: "form.html.erb", locals: { funeral: @funeral, user: @funeral.user } %>
+  <h2 class="display-3">Update Your Preferences:</h2>
+
+  <hr class="my-4">
+
+  <div>
+    <%= render partial: "form.html.erb", locals: { funeral: @funeral, user: @funeral.user } %>
+  </div>
+
+</div>
