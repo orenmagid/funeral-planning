@@ -11,10 +11,12 @@
 
 </div>
 
-<div class="inline">
-  <a href="/access/login" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Login</a>
-</div>
+  <div class="inline">
+    <% if !session[:user_id] %>
+      <a href="/access/login" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Login</a>
+    </div>
 
-<div class="inline">
-  <a href="/users/new" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Create New User</a>
-</div>
+    <div class="inline">
+      <a href="/users/new" class="btn btn-outline-primary inline" role="button" aria-pressed="true">Create New User</a>
+    <% end %>
+  </div>
