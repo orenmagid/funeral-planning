@@ -2,7 +2,7 @@
 <%= form_for ([user, funeral])  do |f| %>
 
 <div>
-    <h3>Service Type</h3>
+    <h3 class="display-4">Service Type</h3>
     <div>
       <p>What type of service would you like to have? You can begin learning more about your options <a href="http://www.nfda.org/consumer-resources/planning-a-funeral/service-options-types-of-tributes" target=”_blank”>here</a>. </p>
       <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'], selected: @funeral.service_type)) %>
@@ -26,8 +26,8 @@
   <hr class="my-4">
 
   <div>
-    <h3>Disposition</h3>
-    <div>
+    <h3 class="display-4">Disposition</h3>
+    <div class="lead">
       <p>"Disposition" is the term for what will be done with one's body after passing&mdash;either cremation or burial.</p>
       <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite. You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/" target=”_blank”>Green Burial Council</a> for additional information.</p>
       <p>Cremation reduces your remains to ash that can either be scattered, housed at a cemetery, or kept at home.</p>
@@ -42,8 +42,8 @@
   <hr class="my-4">
 
   <div>
-    <h3>Funeral Home</h3>
-    <p>Funeral homes help families through many of these decisions. They typically handle disposition and also help plan and coordinate the service. It's probably a good idea to get in touch with some local funeral homes about how they can help you and your loved ones.</p>
+    <h3 class="display-4">Funeral Home</h3>
+    <p class="lead">Funeral homes help families through many of these decisions. They typically handle disposition and also help plan and coordinate the service. It's probably a good idea to get in touch with some local funeral homes about how they can help you and your loved ones.</p>
     <div>
       <p>If you already have a funeral home in mind, please indicate that here.</p>
       <%= f.collection_select(:funeral_home_id, FuneralHome.all, :id, :name) %>
@@ -67,8 +67,8 @@
   <hr class="my-4">
 
   <div>
-    <h3>Religion</h3>
-    <p>Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx" target=”_blank”>a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
+    <h3  class="display-4">Religion</h3>
+    <p class="lead">Religious preferences are often <a href="http://www.beliefnet.com/wellness/health/health-support/grief-and-loss/2001/05/transition-rituals.aspx" target=”_blank”>a significant factor</a> when it comes to end of life wishes. If you have a relevant religious preference, indicate that here.
     <div>
       <%= f.collection_select(:religion_id, Religion.all, :id, :name) %>
     </div>
@@ -81,8 +81,8 @@
   <hr class="my-4">
 
   <div>
-    <h3>Financial Arrangments</h3>
-    <p>Making advanced financial arrangements with a financial institution or a funeral home can help ease the pressure on those responsible for arranging your funeral. There are many different options for setting aside funds.<p>
+    <h3 class="display-4">Financial Arrangments</h3>
+    <p class="lead">Making advanced financial arrangements with a financial institution or a funeral home can help ease the pressure on those responsible for arranging your funeral. There are many different options for setting aside funds.<p>
     <div>
       <p>If you have already made financial arrangements, please indicate this here.</p>
       <%= f.select(:financial_plan, options_for_select(['I have not yet made financial arrangements', 'Funeral Trust', 'Pre-Need Arrangments Through Funeral Home', 'Cemetery Plot', 'Funeral Insurance','Other - Specify Below'])) %>
@@ -96,7 +96,7 @@
   <hr class="my-4">
 
   <div>
-    <h3>Other Wishes</h3>
+    <h3 class="display-4">Other Wishes</h3>
     <p>Use this space for any additional information that we haven't already asked you about. For example, you may have thoughts about music you'd like to accompany your service.</p>
     <%= f.text_area :general_expand%>
   </div>
@@ -104,7 +104,7 @@
   <hr class="my-4">
 
   <div>
-    <%= f.submit "Submit Preferences", type: "button", class: "btn btn-primary btn-lg btn-block" %>
+    <%= f.submit "Submit Preferences", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 
 <% end %>
