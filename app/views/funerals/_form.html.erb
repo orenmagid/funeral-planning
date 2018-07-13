@@ -4,21 +4,21 @@
 <div>
     <h3>Service Type</h3>
     <div>
-      <p>There are many ways to gather and remember after a passing happens. There is no right or wrong way, but it's important to have an idea. Do you know what type of service you might like to have? If that's hard to think about, consider what service family/friends might like to have. </p>
+      <p>What type of service would you like to have? You can begin learning more about your options <a href="http://www.nfda.org/consumer-resources/planning-a-funeral/service-options-types-of-tributes">here</a>. </p>
       <%= f.select(:service_type, options_for_select(['Unspecified', 'Traditional Funeral', 'Viewing Only', 'Graveside Only', 'Memorial Service', 'Casual Gathering','No Service'], selected: @funeral.service_type)) %>
     </div>
     <div>
       <h5>Officiant</h5>
-      <p>If you're having a service or a gathering, do you have a person in mind who you'd like to be the primary speaker?</p>
+      <p>If you're having a service or a gathering, who will be the primary speaker? Members of the clergy often play this role, but that is not required.</p>
       <%= f.text_field :officiant %>
     </div>
     <div>
       <h5>Additional Speakers</h5>
-      <p>Is there anyone else who you'd like to have speak at the gathering?</p>
+      <p>Who else would you like to have speak?</p>
       <%= f.text_area :eulogist_expand%>
     </div>
     <div>
-      <p>Is there's anything else you'd like someone to know about your service wishes?</p>
+      <p>Is there's anything else you'd like express about your service wishes?</p>
       <%= f.text_area :service_type_expand%>
     </div>
   </div>
@@ -26,15 +26,14 @@
   <div>
     <h3>Disposition</h3>
     <div>
-      <p>Disposition is the term for what will happen with someone's body after they pass away. Ultimately, people can be buried or cremated.</p>
-      <p>With Burial, you're placed into the ground, most likely at a cemetery. This offers a place to visit for family and usually an accompanying servce for the Burial.</p>
-      <p>With Cremation, the process turns your remains to ash that can then be scattered, placed at a cemetery to visit, or kept at home.</p>
-      <p>You also have the option of a green burial, which is an environmentally conscious way of handling burial practices. Go to the Green Burial Council website for additional information. https://greenburialcouncil.org/home/what-is-green-burial/</p>
+      <p>"Disposition" is the term for what will be done with one's body after passing&mdash;either cremation or burial.</p>
+      <p>With burial, one's is placed in a grave, most likely at a cemetery. Gravesites offer a place for family and friends to visit. Accompanying services are usually held at the gravesite.You also have the option of a green burial, an environmentally conscious way of handling burial practices. Visit the <a href="https://greenburialcouncil.org/home/what-is-green-burial/">Green Burial Council</a> for additional information.</p>
+      <p>Cremation reduces your remains to ash that can either be scattered, housed at a cemetery, or kept at home.</p>
       <%= f.select(:disposition, options_for_select(['Burial', 'Green Burial', 'Cremation', 'Donate Body to Science', 'Burial at Sea', 'Other - Specify Below'], selected: @funeral.disposition)) %>
     </div>
     <div>
-      <p>(THIS TEXT IN THE TEXT BOX?)Do you have an idea of where you'd like to buried or scattered? Is there anything else you'd like someone to know about your wishes here?</p>
-      <%= f.text_area :disposition_expand%>
+  
+      <%= f.text_area :disposition_expand, placeholder: "Do you have an idea of where you'd like to buried or scattered? Is there anything else you'd like someone to know about your wishes here?"%>
     </div>
   </div>
 
