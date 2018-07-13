@@ -11,26 +11,22 @@
 
   <body>
     <div id="header">
-      <% if current_page?(root_path) %>
-        <%= render 'layouts/home_header' %>
-      <% else %>
-        <div id="std-header" class="row header-link">
-          <div class="col">
-            <a href="/"><h1>Planning Ahead</h1></a>
-          </div>
-          <% if session[:user_id] %>
-            <% if @page == "menu" %>
-            <% else %>
-              <div class="backlink col-1">
-                <a href="/home" class="btn btn-outline-light" role="button" aria-pressed="true">Menu</a>
-              </div>
-            <% end %>
+      <div id="std-header" class="row header-link">
+        <div class="col">
+          <a href="/"><h1>Planning Ahead</h1></a>
+        </div>
+        <% if session[:user_id] %>
+          <% if @page == "menu" %>
+          <% else %>
             <div class="backlink col-1">
-              <a href="/access/logout" class="btn btn-outline-light" role="button" aria-pressed="true">Logout</a>
+              <a href="/home" class="btn btn-outline-light" role="button" aria-pressed="true">Menu</a>
             </div>
           <% end %>
-        </div>
-      <% end %>
+          <div class="backlink col-1">
+            <a href="/access/logout" class="btn btn-outline-light" role="button" aria-pressed="true">Logout</a>
+          </div>
+        <% end %>
+      </div>
     </div>
 
     <div class="container">
