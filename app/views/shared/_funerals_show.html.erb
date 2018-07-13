@@ -1,11 +1,11 @@
-<h2 class="display-4"><%= @user.username%>'s Funeral Preferences:</h2>
+<h2 class="display-3"><%= @user.username%>'s Funeral Preferences:</h2>
 
 <div class="jumbotron">
 
   <div>
     <div>
-      <h1>Service Type:</h1>
-      <p class="lead top-margin"><%= funeral.service_type %> </p>
+      <h3 class="display-4">Service Type:</h3>
+      <p class="lead"><%= funeral.service_type %> </p>
     </div>
 
 
@@ -38,8 +38,8 @@
   <hr class="my-4">
 
   <div>
-    <h1>Disposition:</h1>
-    <p class="lead top-margin"> <%= funeral.disposition %> </p>
+    <h3 class="display-4">Disposition:</h3>
+    <p class="lead"> <%= funeral.disposition %> </p>
   </div>
   <div>
     <h3>Additional Disposition Details:</h3>
@@ -52,11 +52,11 @@
 <hr class="my-4">
   <div>
     <% if funeral.funeral_home.name == "I am not sure at this time" %>
-      <h1>Funeral Home:</h1>
-      <p class="lead top-margin"> <%= funeral.funeral_home.name %> </p>
+      <h3 class="display-4">Funeral Home:</h3>
+      <p class="lead"> <%= funeral.funeral_home.name %> </p>
     <% else %>
-      <h1>Funeral Home :</h1>
-      <p class="lead top-margin"> <%= funeral.funeral_home.name %> </p>
+      <h3 class="display-4">Funeral Home :</h3>
+      <p class="lead"> <%= funeral.funeral_home.name %> </p>
       <h3>Funeral Home Phone:</h3>
       <p class="lead"><%= funeral.funeral_home.phone %> </p>
       <h3>Funeral Home Address:</h3>
@@ -74,8 +74,8 @@
   </div>
 <hr class="my-4">
   <div>
-    <h1>Religion:</h1>
-    <p class="lead top-margin"> <%= funeral.religion.name %> </p>
+    <h3 class="display-4">Religion:</h3>
+    <p class="lead"> <%= funeral.religion.name %> </p>
   </div>
   <div>
     <h3>Additional Religion Details:</h3>
@@ -87,8 +87,8 @@
   </div>
 <hr class="my-4">
   <div>
-    <h1>Financial Plan:</h1>
-    <p class="lead top-margin"> <%= funeral.financial_plan %> </p>
+    <h3 class="display-4">Financial Plan:</h3>
+    <p class="lead"> <%= funeral.financial_plan %> </p>
   </div>
   <div>
     <h3>Additional Financial Plan Details:</h3>
@@ -100,7 +100,7 @@
   </div>
 <hr class="my-4">
   <div>
-    <h1>Other Wishes:</h1>
+    <h3 class="display-4">Other Wishes:</h3>
     <% if funeral.general_expand == "" %>
       <p class="lead top-margin"> None provided.</p>
     <% else %>
